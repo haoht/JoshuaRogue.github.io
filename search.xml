@@ -25,9 +25,9 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[将单向链表按某值划分成左边小、中间相等、右边大的形式]]></title>
-    <url>%2F2018%2F01%2F25%2F%E5%B0%86%E5%8D%95%E5%90%91%E9%93%BE%E8%A1%A8%E6%8C%89%E6%9F%90%E5%80%BC%E5%88%92%E5%88%86%E4%B8%BA%E5%B7%A6%E5%B0%8F%E4%B8%AD%E7%AD%89%E5%8F%B3%E5%A4%A7%E7%9A%84%E5%BD%A2%E5%BC%8F%2F</url>
-    <content type="text"><![CDATA[本题也有两种解法，一种普通解法一种进阶解法，进阶解法多出了额外空间复杂度的要求 普通解法普通解法的思路如下 遍历链表，得到长度N 生成长度为N的Node类型的数组nodeArr，遍历链表，依次将节点放入 在nodeArr中把小于pivot的节点放在左边，相等的放中间，大于的放右边 结果步骤3的调整后，再把nodeArr中的节点依次连起来 具体算法如下：12345678910111213141516171819202122232425262728293031323334353637383940414243public Node listPartition1(Node head, int pivot) &#123; if (head == null) &#123; return head; &#125; Node cur = head; int i =0; while (cur != null) &#123; i ++; cur = cur.next; &#125; Node[] nodeArr = new Node[i]; i = 0; cur =head; for (i = 0; i != nodeArr.length; i++)&#123; nodeArr[i] = cur; cur = cur.next; &#125; arrPartition(nodeArr,pivot); for(i = 1; i != nodeArr.length; i++) &#123; nodeArr[i -1].next = nodeArr[i]; &#125; nodeArr[i-1].next = null; return nodeArr[0]; &#125; public void arrPartition(Node[] nodeArr, int pivot) &#123; int small = -1; int big = nodeArr.length; int index = 0; while (index != big) &#123; if (nodeArr[index].value &lt; pivot) &#123; swap(nodeArr, ++small, index++); &#125;else if (nodeArr[index].value == pivot) &#123; index ++; &#125;else &#123; swap(nodeArr, -- big, index); &#125; &#125; &#125; public void swap(Node[] nodeArr, int a, int b) &#123; Node tmp = nodeArr[a]; nodeArr[a] = nodeArr[b]; nodeArr[b] = tmp; &#125; 进阶解法进阶解法当中没有用到普通解法中的排序，而是将所有节点依次分为三个链表，完成之后再进行连接 分为small、equal、big三个链表 将small、equal和big三个链表重新串起来即可 整个过程需要特别注意对null节点的判断和处理 具体算法如下： 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647public Node listPartition2(Node head, int pivot) &#123; Node sH = null; Node sT = null; Node eH = null; Node eT = null; Node bH = null; Node bT = null; Node next = null; while (head != null) &#123; next = head.next; head.next = null; if (head.value &lt; pivot) &#123; if (sH == null) &#123; sH = head; sT =head; &#125; else &#123; sT.next = head; sT = head; &#125; &#125; else if (head.value == pivot) &#123; if (eH == null) &#123; eH = head; eT = head; &#125;else &#123; eT.next = head; eT = head; &#125; &#125;else &#123; if (bH == null) &#123; bH = head; bT = head; &#125; else &#123; bT.next = head; bT = head; &#125; &#125; head = next; &#125; if (sT != null) &#123; sT.next = eH; eT = eT == null?sT :eT; &#125; if (eT != null) &#123; eT.next =bH; &#125; return sH != null?sH:eH!=null?eH:bH; &#125;]]></content>
+    <title><![CDATA[打印两个有序链表的公共部分]]></title>
+    <url>%2F2018%2F01%2F25%2F%E6%89%93%E5%8D%B0%E4%B8%A4%E4%B8%AA%E9%93%BE%E8%A1%A8%E7%9A%84%E5%85%AC%E5%85%B1%E9%83%A8%E5%88%86%2F</url>
+    <content type="text"><![CDATA[打印两个有序链表的公共部分，思路如下： 若head1的值大于head2，则head2移动到下一节点，反之head1移动 若head1的值等于head2的值，则找到公共部分，开始打印 ##### 具体算法如下： 12345678910111213public void printCommonPart(Node head1, Node head2) &#123; while (head1 != null &amp;&amp; head2 != null) &#123; if (head1.value &gt; head2.value) &#123; head2 = head2.next; &#125;else if(head1.value &lt; head2.value) &#123; head1 = head1.next; &#125;else &#123; System.out.print(head1.value + &quot; &quot;); head1 = head1.next; head2 = head2.next; &#125; &#125; &#125;]]></content>
       <categories>
         <category>算法</category>
       </categories>
@@ -41,9 +41,9 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[打印两个有序链表的公共部分]]></title>
-    <url>%2F2018%2F01%2F25%2F%E6%89%93%E5%8D%B0%E4%B8%A4%E4%B8%AA%E9%93%BE%E8%A1%A8%E7%9A%84%E5%85%AC%E5%85%B1%E9%83%A8%E5%88%86%2F</url>
-    <content type="text"><![CDATA[打印两个有序链表的公共部分，思路如下： 若head1的值大于head2，则head2移动到下一节点，反之head1移动 若head1的值等于head2的值，则找到公共部分，开始打印 ##### 具体算法如下： 12345678910111213public void printCommonPart(Node head1, Node head2) &#123; while (head1 != null &amp;&amp; head2 != null) &#123; if (head1.value &gt; head2.value) &#123; head2 = head2.next; &#125;else if(head1.value &lt; head2.value) &#123; head1 = head1.next; &#125;else &#123; System.out.print(head1.value + &quot; &quot;); head1 = head1.next; head2 = head2.next; &#125; &#125; &#125;]]></content>
+    <title><![CDATA[将单向链表按某值划分成左边小、中间相等、右边大的形式]]></title>
+    <url>%2F2018%2F01%2F25%2F%E5%B0%86%E5%8D%95%E5%90%91%E9%93%BE%E8%A1%A8%E6%8C%89%E6%9F%90%E5%80%BC%E5%88%92%E5%88%86%E4%B8%BA%E5%B7%A6%E5%B0%8F%E4%B8%AD%E7%AD%89%E5%8F%B3%E5%A4%A7%E7%9A%84%E5%BD%A2%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[本题也有两种解法，一种普通解法一种进阶解法，进阶解法多出了额外空间复杂度的要求 普通解法普通解法的思路如下 遍历链表，得到长度N 生成长度为N的Node类型的数组nodeArr，遍历链表，依次将节点放入 在nodeArr中把小于pivot的节点放在左边，相等的放中间，大于的放右边 结果步骤3的调整后，再把nodeArr中的节点依次连起来 具体算法如下：12345678910111213141516171819202122232425262728293031323334353637383940414243public Node listPartition1(Node head, int pivot) &#123; if (head == null) &#123; return head; &#125; Node cur = head; int i =0; while (cur != null) &#123; i ++; cur = cur.next; &#125; Node[] nodeArr = new Node[i]; i = 0; cur =head; for (i = 0; i != nodeArr.length; i++)&#123; nodeArr[i] = cur; cur = cur.next; &#125; arrPartition(nodeArr,pivot); for(i = 1; i != nodeArr.length; i++) &#123; nodeArr[i -1].next = nodeArr[i]; &#125; nodeArr[i-1].next = null; return nodeArr[0]; &#125; public void arrPartition(Node[] nodeArr, int pivot) &#123; int small = -1; int big = nodeArr.length; int index = 0; while (index != big) &#123; if (nodeArr[index].value &lt; pivot) &#123; swap(nodeArr, ++small, index++); &#125;else if (nodeArr[index].value == pivot) &#123; index ++; &#125;else &#123; swap(nodeArr, -- big, index); &#125; &#125; &#125; public void swap(Node[] nodeArr, int a, int b) &#123; Node tmp = nodeArr[a]; nodeArr[a] = nodeArr[b]; nodeArr[b] = tmp; &#125; 进阶解法进阶解法当中没有用到普通解法中的排序，而是将所有节点依次分为三个链表，完成之后再进行连接 分为small、equal、big三个链表 将small、equal和big三个链表重新串起来即可 整个过程需要特别注意对null节点的判断和处理 具体算法如下： 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647public Node listPartition2(Node head, int pivot) &#123; Node sH = null; Node sT = null; Node eH = null; Node eT = null; Node bH = null; Node bT = null; Node next = null; while (head != null) &#123; next = head.next; head.next = null; if (head.value &lt; pivot) &#123; if (sH == null) &#123; sH = head; sT =head; &#125; else &#123; sT.next = head; sT = head; &#125; &#125; else if (head.value == pivot) &#123; if (eH == null) &#123; eH = head; eT = head; &#125;else &#123; eT.next = head; eT = head; &#125; &#125;else &#123; if (bH == null) &#123; bH = head; bT = head; &#125; else &#123; bT.next = head; bT = head; &#125; &#125; head = next; &#125; if (sT != null) &#123; sT.next = eH; eT = eT == null?sT :eT; &#125; if (eT != null) &#123; eT.next =bH; &#125; return sH != null?sH:eH!=null?eH:bH; &#125;]]></content>
       <categories>
         <category>算法</category>
       </categories>
@@ -121,14 +121,6 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[容器中的游标-迭代器模式]]></title>
-    <url>%2F2018%2F01%2F17%2F%E5%AE%B9%E5%99%A8%E4%B8%AD%E7%9A%84%E6%B8%B8%E6%A0%87-%E8%BF%AD%E4%BB%A3%E5%99%A8%E6%A8%A1%E5%BC%8F%2F</url>
-    <content type="text"><![CDATA[迭代器模式又称为游标模式，Java中的List遍历就可以使用迭代器，而不需要使用“明显”的遍历算法，下面举一个迭代器模式的小例子 迭代器接口1234public interface Iterator&lt;T&gt; &#123; boolean hasNext(); T next();&#125; 具体迭代器类12345678910111213141516171819202122public class ConcreteIterator&lt;T&gt; implements Iterator &#123; private List&lt;T&gt; list = new ArrayList&lt;T&gt;(); private int cursor = 0; public ConcreteIterator(List&lt;T&gt; list) &#123; this.list = list; &#125; @Override public boolean hasNext() &#123; return cursor != list.size(); &#125; @Override public Object next() &#123; T obj = null; if (this.hasNext()) &#123; obj = this.list.get(cursor++); &#125; return obj; &#125;&#125; 容器接口12345public interface Aggregate&lt;T&gt; &#123; void add(T obj); void remove(T obj); Iterator&lt;T&gt; iterator();&#125; 具体容器类1234567891011121314151617public class ConcreteAggregate&lt;T&gt; implements Aggregate&lt;T&gt; &#123; private List&lt;T&gt; list = new ArrayList&lt;T&gt;(); @Override public void add(T obj) &#123; list.add(obj); &#125; @Override public void remove(T obj) &#123; list.remove(obj); &#125; @Override public Iterator&lt;T&gt; iterator() &#123; return new ConcreteIterator&lt;T&gt;(list); &#125;&#125; 实现示例123456789101112public class Main &#123; public static void main(String[] args) &#123; Aggregate&lt;String&gt; aggregate = new ConcreteAggregate&lt;&gt;(); aggregate.add(&quot;android&quot;); aggregate.add(&quot;studio&quot;); aggregate.add(&quot;Google&quot;); Iterator&lt;String&gt; iterator = aggregate.iterator(); while (iterator.hasNext())&#123; System.out.println(iterator.next()); &#125; &#125;&#125; 实际上，迭代器模式是一个不需要由开发者实现的模式，这里只是来解析以下迭代器是怎样构成的，实际上List容器有自带的迭代器，不需要我们自己实现]]></content>
-      <categories>
-        <category>设计模式</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[命令模式]]></title>
     <url>%2F2018%2F01%2F17%2F%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F%2F</url>
     <content type="text"><![CDATA[命令模式对简单的调用关系进行解耦，再大多数情况下我们可以使用直接调用的方式来做，但是如果调用比较繁琐，那么使用命令模式不失为一个好选择 这里举一个超级马里奥移动的例子来讲解命令模式 超级马里奥的动作类12345678910111213public class Mario &#123; public void toLeft() &#123; System.out.println(&quot;向左移&quot;); &#125; public void toRight() &#123; System.out.println(&quot;向右移&quot;); &#125; public void toJump() &#123; System.out.println(&quot;跳跃&quot;); &#125;&#125; 定义执行方法接口123public interface Command &#123; void execute();&#125; 定义具体命令类 跳命令 12345678910public class JumpCommand implements Command &#123; private Mario mario; public JumpCommand(Mario mario) &#123; this.mario = mario; &#125; @Override public void execute() &#123; mario.toJump(); &#125;&#125; 左移命令 12345678910public class LeftCommand implements Command &#123; private Mario mario; public LeftCommand(Mario mario) &#123; this.mario = mario; &#125; @Override public void execute() &#123; mario.toLeft(); &#125;&#125; 右移命令 12345678910public class RightCommand implements Command &#123; private Mario mario; public RightCommand(Mario mario) &#123; this.mario = mario; &#125; @Override public void execute() &#123; mario.toRight(); &#125;&#125; 命令的包装：按钮类1234567891011121314151617181920212223242526272829public class Button &#123; private JumpCommand jumpCommand; private LeftCommand leftCommand; private RightCommand rightCommand; public void setJumpCommand(JumpCommand jumpCommand) &#123; this.jumpCommand = jumpCommand; &#125; public void setLeftCommand(LeftCommand leftCommand) &#123; this.leftCommand = leftCommand; &#125; public void setRightCommand(RightCommand rightCommand) &#123; this.rightCommand = rightCommand; &#125; public void jump() &#123; jumpCommand.execute(); &#125; public void left() &#123; leftCommand.execute(); &#125; public void right() &#123; rightCommand.execute(); &#125;&#125; 具体执行123456789101112131415public class Main &#123; public static void main(String[] args) &#123; Mario mario = new Mario(); LeftCommand leftCommand = new LeftCommand(mario); RightCommand rightCommand = new RightCommand(mario); JumpCommand jumpCommand = new JumpCommand(mario); Button button = new Button(); button.setJumpCommand(jumpCommand); button.setLeftCommand(leftCommand); button.setRightCommand(rightCommand); button.jump(); button.left(); button.right(); &#125;&#125; 命令类可以在相当程度上实现调用逻辑的解耦，但是像大家看到的一样，需要多出很多的类，但是这样设计模式的原则：对修改关闭，对扩展开放，才能提到体现]]></content>
@@ -145,11 +137,11 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[单链表的选择排序]]></title>
-    <url>%2F2018%2F01%2F16%2F%E5%8D%95%E9%93%BE%E8%A1%A8%E7%9A%84%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%2F</url>
-    <content type="text"><![CDATA[选择排序我们一般在数组中会使用选择排序对数组中的数字进行处理，而在单链表当中，问题就比较有难度了，解题思路如下： 开始时默认整个链表未排序，找到最小节点记为newHead 每次都在未排序的部分当中找到最小值的节点，把这个节点在未排序的链表中删除 把步骤2中删除的节点加入到已排序的链表中 全部处理完毕后返回newHead 具体算法如下：1234567891011121314151617181920212223242526272829303132333435363738public Node selectSort(Node head) &#123; Node tail = null; Node cur = head; Node smallPre = null; Node small = null; while (cur != null) &#123; small = cur; smallPre = getSmallestPreNode(cur); if (smallPre != null) &#123; small = smallPre.next; smallPre.next = small.next; &#125; cur = cur==small?cur.next:cur; if(tail == null) &#123; head = small; &#125; else &#123; tail.next = small; &#125; tail = small; &#125; return head; &#125; public Node getSmallestPreNode(Node head) &#123; Node smallPre = null; Node small = head; Node pre = head; Node cur = head.next; while (cur != null) &#123; if (cur.value &lt; small.value) &#123; smallPre = pre; small = cur; &#125; pre = cur; cur = cur.next; &#125; return smallPre; &#125;]]></content>
+    <title><![CDATA[容器中的游标-迭代器模式]]></title>
+    <url>%2F2018%2F01%2F17%2F%E5%AE%B9%E5%99%A8%E4%B8%AD%E7%9A%84%E6%B8%B8%E6%A0%87-%E8%BF%AD%E4%BB%A3%E5%99%A8%E6%A8%A1%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[迭代器模式又称为游标模式，Java中的List遍历就可以使用迭代器，而不需要使用“明显”的遍历算法，下面举一个迭代器模式的小例子 迭代器接口1234public interface Iterator&lt;T&gt; &#123; boolean hasNext(); T next();&#125; 具体迭代器类12345678910111213141516171819202122public class ConcreteIterator&lt;T&gt; implements Iterator &#123; private List&lt;T&gt; list = new ArrayList&lt;T&gt;(); private int cursor = 0; public ConcreteIterator(List&lt;T&gt; list) &#123; this.list = list; &#125; @Override public boolean hasNext() &#123; return cursor != list.size(); &#125; @Override public Object next() &#123; T obj = null; if (this.hasNext()) &#123; obj = this.list.get(cursor++); &#125; return obj; &#125;&#125; 容器接口12345public interface Aggregate&lt;T&gt; &#123; void add(T obj); void remove(T obj); Iterator&lt;T&gt; iterator();&#125; 具体容器类1234567891011121314151617public class ConcreteAggregate&lt;T&gt; implements Aggregate&lt;T&gt; &#123; private List&lt;T&gt; list = new ArrayList&lt;T&gt;(); @Override public void add(T obj) &#123; list.add(obj); &#125; @Override public void remove(T obj) &#123; list.remove(obj); &#125; @Override public Iterator&lt;T&gt; iterator() &#123; return new ConcreteIterator&lt;T&gt;(list); &#125;&#125; 实现示例123456789101112public class Main &#123; public static void main(String[] args) &#123; Aggregate&lt;String&gt; aggregate = new ConcreteAggregate&lt;&gt;(); aggregate.add(&quot;android&quot;); aggregate.add(&quot;studio&quot;); aggregate.add(&quot;Google&quot;); Iterator&lt;String&gt; iterator = aggregate.iterator(); while (iterator.hasNext())&#123; System.out.println(iterator.next()); &#125; &#125;&#125; 实际上，迭代器模式是一个不需要由开发者实现的模式，这里只是来解析以下迭代器是怎样构成的，实际上List容器有自带的迭代器，不需要我们自己实现]]></content>
       <categories>
-        <category>算法</category>
+        <category>设计模式</category>
       </categories>
   </entry>
   <entry>
@@ -158,6 +150,14 @@
     <content type="text"><![CDATA[task 的创建方式快捷方式我们一般使用最快捷的方式来创建任务，像这样 123task hello &lt;&lt; &#123; println &apos;Hello world!&apos;&#125; 动态方式我们可以使用groovy动态地创建任务，像这样 123453.times &#123; counter -&gt; task &quot;task$counter&quot; &lt;&lt; &#123; println &quot;this is task$counter&quot; &#125;&#125; 这里会生成task1、task2、task3这三个任务，我们可以运行其中的任何一个 这里之所以不介绍其他的方式，是因为gradle的版本迭代十分迅速，一些方法已经不适用了，所以这里只介绍这一种 task的行为周期gradle中的task有First、本身（这里暂时这么称呼）、Last以及后添加的行为，这里举个例子123456789101112131415task hello &lt;&lt; &#123; println &quot;this is main&quot;&#125;hello.doFirst&#123; println &quot;this is first&quot;&#125;hello.doLast&#123; println &quot;this is Last&quot;&#125;hello&lt;&lt; &#123; println &quot;this is add&quot;&#125; 运行后结果如下： 从中我们可以得出，task行为的执行次序是：doFirst，task本身，doLast，后来添加的任务 task间的依赖比较奇特的是，task之间也可以存在依赖，如下 1234567task one&lt;&lt; &#123; println &apos;one&apos;&#125;task two(dependsOn:one) &lt;&lt;&#123; println &apos;two&apos;&#125; task间存在的依赖很像类的构造函数，比如这里two依赖于one，如果我们看成two继承于one的话，就很容易理解了，这样two创建之间必须先实行one的构造函数，这里就是先执行one函数 task动态任务与task依赖结合使用除了上述的一种定义方法之外，我们也可以使用另一种方法来定义依赖1task1.dependsOn task2 这样执行task1之前就会先执行task2了，我们也可以使用动态生成的方式来看一下 12345673.times &#123; counter -&gt; task &quot;task$counter&quot; &lt;&lt; &#123; println &quot;this is task$counter&quot; &#125;&#125;task1.dependsOn task0, task2 运行结果如下 默认任务 在使用gradle中我们要执行一个任务，通常是这样1grale 任务名 但其实我们可以指定一个或多个任务作为默认任务，这样直接用gradle即可，例如12345defaultTasks &apos;hello&apos;task hello &lt;&lt; &#123; println &quot;this is main&quot;&#125; 结果如下]]></content>
       <categories>
         <category>gradle</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[单链表的选择排序]]></title>
+    <url>%2F2018%2F01%2F16%2F%E5%8D%95%E9%93%BE%E8%A1%A8%E7%9A%84%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%2F</url>
+    <content type="text"><![CDATA[选择排序我们一般在数组中会使用选择排序对数组中的数字进行处理，而在单链表当中，问题就比较有难度了，解题思路如下： 开始时默认整个链表未排序，找到最小节点记为newHead 每次都在未排序的部分当中找到最小值的节点，把这个节点在未排序的链表中删除 把步骤2中删除的节点加入到已排序的链表中 全部处理完毕后返回newHead 具体算法如下：1234567891011121314151617181920212223242526272829303132333435363738public Node selectSort(Node head) &#123; Node tail = null; Node cur = head; Node smallPre = null; Node small = null; while (cur != null) &#123; small = cur; smallPre = getSmallestPreNode(cur); if (smallPre != null) &#123; small = smallPre.next; smallPre.next = small.next; &#125; cur = cur==small?cur.next:cur; if(tail == null) &#123; head = small; &#125; else &#123; tail.next = small; &#125; tail = small; &#125; return head; &#125; public Node getSmallestPreNode(Node head) &#123; Node smallPre = null; Node small = head; Node pre = head; Node cur = head.next; while (cur != null) &#123; if (cur.value &lt; small.value) &#123; smallPre = pre; small = cur; &#125; pre = cur; cur = cur.next; &#125; return smallPre; &#125;]]></content>
+      <categories>
+        <category>算法</category>
       </categories>
   </entry>
   <entry>
@@ -249,19 +249,19 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[gradle中的Setting文件与Build文件]]></title>
-    <url>%2F2018%2F01%2F08%2Fgradle%E6%9E%84%E5%BB%BA%E8%84%9A%E6%9C%AC%E5%9F%BA%E7%A1%80%2F</url>
-    <content type="text"><![CDATA[Setting文件Setting文件可以说是子项目（也可以说是Module）的配置文件，大多数setting.gradle的作用是为了配置子工程，再Gradle多工程是通过工程树表示的，如在Android studio中我们指定相应的module能在主工程当中使用，需要这样 1include &apos;:example&apos; Build文件Build是Project的配置文件，我们可以配置版本，插件，依赖库等等的信息，比较常见的就是Jcenter仓库的配置1234567891011121314buildscript &#123; repositories &#123; google() jcenter() &#125; dependencies &#123; classpath &apos;com.android.tools.build:gradle:3.0.1&apos; classpath &apos;com.github.dcendents:android-maven-gradle-plugin:1.4.1&apos; classpath &apos;com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.2&apos; // NOTE: Do not place your application dependencies here; they belong // in the individual module build.gradle files &#125;&#125;]]></content>
-      <categories>
-        <category>gradle</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[反转部分单向链表]]></title>
     <url>%2F2018%2F01%2F08%2F%E5%8F%8D%E8%BD%AC%E9%83%A8%E5%88%86%E5%8D%95%E5%90%91%E9%93%BE%E8%A1%A8%2F</url>
     <content type="text"><![CDATA[反转部分单向链表比反转整个单链表略显复杂，具体思路如下： 规定部分链表的起始位置为from，结束位置为to，判断是否满足1&lt;=from&lt;=to&lt;=N（N为总节点数），不满足则世界返回头节点 找到第from-1个节点fPre和第to+1个节点tPos。fPre是要反转部分的前一个节点，tPos则是要反转部分的后一个节点。 如果fPre为null，说明反转部分是包含头节点的，则返回新的头节点，也就是没反转之前反转部分的最后一个几点，反转之后反转部分的第一个节点；如果fPre不为null，则返回旧的头节点 具体代码如下：123456789101112131415161718192021222324252627282930public Node reversePart(Node head, int from, int to) &#123; int len = 0; Node node1 = head; Node fPre = null; Node tPos = null; while (node1 != null) &#123; len ++; fPre = len==from - 1 ? node1 : fPre; tPos = len==to + 1 ? node1 : tPos; node1 = node1.next; &#125; if (from &gt; to || from &lt; 1 || to &gt; len) &#123; return head; &#125; node1 = fPre == null ? head : fPre.next; Node node2 = node1.next; node1.next = tPos; Node next = null; while (node2 != tPos) &#123; next = node2.next; node2.next = node1; node1 = node2; node2 = next; &#125; if (fPre != null) &#123; fPre.next = node1; return head; &#125; return node1; &#125;]]></content>
       <categories>
         <category>算法</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[gradle中的Setting文件与Build文件]]></title>
+    <url>%2F2018%2F01%2F08%2Fgradle%E6%9E%84%E5%BB%BA%E8%84%9A%E6%9C%AC%E5%9F%BA%E7%A1%80%2F</url>
+    <content type="text"><![CDATA[Setting文件Setting文件可以说是子项目（也可以说是Module）的配置文件，大多数setting.gradle的作用是为了配置子工程，再Gradle多工程是通过工程树表示的，如在Android studio中我们指定相应的module能在主工程当中使用，需要这样 1include &apos;:example&apos; Build文件Build是Project的配置文件，我们可以配置版本，插件，依赖库等等的信息，比较常见的就是Jcenter仓库的配置1234567891011121314buildscript &#123; repositories &#123; google() jcenter() &#125; dependencies &#123; classpath &apos;com.android.tools.build:gradle:3.0.1&apos; classpath &apos;com.github.dcendents:android-maven-gradle-plugin:1.4.1&apos; classpath &apos;com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.2&apos; // NOTE: Do not place your application dependencies here; they belong // in the individual module build.gradle files &#125;&#125;]]></content>
+      <categories>
+        <category>gradle</category>
       </categories>
   </entry>
   <entry>
@@ -305,17 +305,17 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[删除链表的中间节点和a/b处的节点]]></title>
-    <url>%2F2018%2F01%2F03%2F%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E4%B8%AD%E9%97%B4%E8%8A%82%E7%82%B9%2F</url>
-    <content type="text"><![CDATA[删除链表的中间节点这道题的解题思路还是比较简单的，我们只需用两个指针，一个指针每次走两步，而另一个指针每次走一步，当走两步的指针走到尽头时，另一个指针指向的即为中间节点的前驱节点 具体算法如下：12345678910111213141516public Node removeMidNode(Node head) &#123; if (head == null || head.next == null) &#123; return head; &#125; if (head.next.next == null) &#123; return head.next; &#125; Node pre = head; Node cur = head.next.next; while (cur.next != null &amp;&amp; cur.next.next != null) &#123; pre = pre.next; cur = cur.next.next; &#125; pre.next = pre.next.next; return head; &#125; 删除链表a/b处的节点这是删除中间节点的进阶问题，具体思路如下： 首先遍历链表，得到长度n，计算 double r = ((double)(a*n))/((double)b)的值，r向上取整之后的整数值代表该删除的节点 知道该删除的节点数之后找到该节点删除即可 具体算法如下： 1234567891011121314151617181920212223public Node removeByRatio(Node head, int a, int b) &#123; if (a &lt; 1 || a &gt; b) &#123; return head; &#125; int n = 0; Node cur = head; while (cur != null) &#123; n++; cur = cur.next; &#125; n = (int) (Math.ceil((double)(a * n))/(double)b); if (n == 1) &#123; head = head.next; &#125; if (n &gt; 1) &#123; cur = head; while (--n != 1) &#123; cur = cur.next; &#125; cur.next = cur.next.next; &#125; return head; &#125;]]></content>
+    <title><![CDATA[由两个栈实现一个队列]]></title>
+    <url>%2F2018%2F01%2F03%2F%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E9%98%9F%E5%88%97%2F</url>
+    <content type="text"><![CDATA[栈和队列都是属于基本的数据结构，而栈的特点是后进先出，队列的特点是先进后出，我们只需要使用两个栈就可以实现从后进先出到先进先出 具体的实现算法如下：123456789101112131415161718192021222324public class TwoStackQueue &#123; public Stack&lt;Integer&gt; firstStack; public Stack&lt;Integer&gt; secondStack; public TwoStackQueue() &#123; firstStack = new Stack&lt;&gt;(); secondStack = new Stack&lt;&gt;(); &#125; public void addInt(Integer integer) &#123; firstStack.push(integer); &#125; public Integer getInt() &#123; if (firstStack.empty()&amp;&amp;secondStack.empty()) &#123; throw new RuntimeException(&quot;No int in the stack!&quot;); &#125;else if(secondStack.empty()) &#123; while (!firstStack.empty()) &#123; secondStack.push(firstStack.pop()); &#125; &#125; return secondStack.pop(); &#125;&#125; 这里只实现了stack的pop操作，如果像实现peek操作的话只需再实现一遍，把pop改为peek即可]]></content>
       <categories>
         <category>算法</category>
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[由两个栈实现一个队列]]></title>
-    <url>%2F2018%2F01%2F03%2F%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E9%98%9F%E5%88%97%2F</url>
-    <content type="text"><![CDATA[栈和队列都是属于基本的数据结构，而栈的特点是后进先出，队列的特点是先进后出，我们只需要使用两个栈就可以实现从后进先出到先进先出 具体的实现算法如下：123456789101112131415161718192021222324public class TwoStackQueue &#123; public Stack&lt;Integer&gt; firstStack; public Stack&lt;Integer&gt; secondStack; public TwoStackQueue() &#123; firstStack = new Stack&lt;&gt;(); secondStack = new Stack&lt;&gt;(); &#125; public void addInt(Integer integer) &#123; firstStack.push(integer); &#125; public Integer getInt() &#123; if (firstStack.empty()&amp;&amp;secondStack.empty()) &#123; throw new RuntimeException(&quot;No int in the stack!&quot;); &#125;else if(secondStack.empty()) &#123; while (!firstStack.empty()) &#123; secondStack.push(firstStack.pop()); &#125; &#125; return secondStack.pop(); &#125;&#125; 这里只实现了stack的pop操作，如果像实现peek操作的话只需再实现一遍，把pop改为peek即可]]></content>
+    <title><![CDATA[删除链表的中间节点和a/b处的节点]]></title>
+    <url>%2F2018%2F01%2F03%2F%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E4%B8%AD%E9%97%B4%E8%8A%82%E7%82%B9%2F</url>
+    <content type="text"><![CDATA[删除链表的中间节点这道题的解题思路还是比较简单的，我们只需用两个指针，一个指针每次走两步，而另一个指针每次走一步，当走两步的指针走到尽头时，另一个指针指向的即为中间节点的前驱节点 具体算法如下：12345678910111213141516public Node removeMidNode(Node head) &#123; if (head == null || head.next == null) &#123; return head; &#125; if (head.next.next == null) &#123; return head.next; &#125; Node pre = head; Node cur = head.next.next; while (cur.next != null &amp;&amp; cur.next.next != null) &#123; pre = pre.next; cur = cur.next.next; &#125; pre.next = pre.next.next; return head; &#125; 删除链表a/b处的节点这是删除中间节点的进阶问题，具体思路如下： 首先遍历链表，得到长度n，计算 double r = ((double)(a*n))/((double)b)的值，r向上取整之后的整数值代表该删除的节点 知道该删除的节点数之后找到该节点删除即可 具体算法如下： 1234567891011121314151617181920212223public Node removeByRatio(Node head, int a, int b) &#123; if (a &lt; 1 || a &gt; b) &#123; return head; &#125; int n = 0; Node cur = head; while (cur != null) &#123; n++; cur = cur.next; &#125; n = (int) (Math.ceil((double)(a * n))/(double)b); if (n == 1) &#123; head = head.next; &#125; if (n &gt; 1) &#123; cur = head; while (--n != 1) &#123; cur = cur.next; &#125; cur.next = cur.next.next; &#125; return head; &#125;]]></content>
       <categories>
         <category>算法</category>
       </categories>
@@ -337,19 +337,19 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[两个单链表相交问题2：判断两个无环链表是否相交]]></title>
-    <url>%2F2018%2F01%2F02%2F%E4%B8%A4%E4%B8%AA%E5%8D%95%E9%93%BE%E8%A1%A8%E7%9B%B8%E4%BA%A4%E9%97%AE%E9%A2%982%2F</url>
-    <content type="text"><![CDATA[这个问题是第一个问题的后续，判断链表无环的话就可以用这个方法做，因为两个无环的链表相交，最后的一个节点是一样的，用这个思路就可以做出来 总体思路如下： 链表1从头节点开始，一次走一步，记录从头节点走到最后节点的步数n1，并记录最后一个节点end1，链表2则相应地记录n2和end2 若end1！=end2，则两个链表不相交，若end1==end2，则比较n1和n2的大小来得出链表1和链表2哪个长，然后分别返回头节点，短的链表先走n1与n2相差的步数 两个链表同时一次一步，相遇节点即为第一个相交节点 具体代码如下1234567891011121314151617181920212223242526272829303132public Node noLoop(Node head1, Node head2) &#123; if (head1 == null &amp;&amp; head2 == null) &#123; return null; &#125; Node cur1 = head1; Node cur2 = head2; int n = 0; while (cur1.next != null) &#123; cur1 = cur1.next; n++; &#125; while (cur2.next != null) &#123; cur2 = cur2.next; n--; &#125; if (cur1 != cur2) &#123; return null; &#125; cur1 = n &gt; 0? head1:head2; cur2 = head1 == cur1? head2:head1; n = Math.abs(n); while (n != 0) &#123; cur1 = cur1.next; n--; &#125; while (cur1 != cur2) &#123; cur1 = cur1.next; cur2 = cur2.next; &#125; return cur1; &#125;]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[Java项目构建：基础单项目]]></title>
     <url>%2F2018%2F01%2F02%2FJava%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%8D%95%E9%A1%B9%E7%9B%AE%2F</url>
     <content type="text"><![CDATA[构建一个Java项目其实十分地简单，只需在gradle中进行配置，然后执行就可以了 Java插件要配置一个Java项目，首先我们地安装Java的插件，在gradle.build文件顶部写入以下代码1apply plugin: &apos;java&apos; 再执行任务安装插件 这样Java的插件就安装完毕了 Android插件在Android开发中，我们在gradle.build文件中可以看到这样的代码 1apply plugin: &apos;com.android.application&apos; 这和刚刚示例的Java插件是同样的用法，不过Android studio在初始化项目的时候已经帮我们默认执行了动作，所以我们需要手动地执行 依赖外部依赖Java项目中的外部依赖其实和Android项目当中的外部依赖是一样的，都是添加maven库等操作，如下所示： 1234repositories &#123; google() jcenter() &#125; 加入依赖在Android项目中，这个一般在我们使用第三方库的时候用到很多，当然，即使我们不使用第三方库，Android studio在初始化时也会为我们配置很多默认的依赖项 123456789dependencies &#123; implementation fileTree(dir: &apos;libs&apos;, include: [&apos;*.jar&apos;]) implementation &apos;com.android.support:appcompat-v7:26.1.0&apos; implementation &apos;com.android.support.constraint:constraint-layout:1.0.2&apos; testImplementation &apos;junit:junit:4.12&apos; androidTestImplementation &apos;com.android.support.test:runner:1.0.1&apos; androidTestImplementation &apos;com.android.support.test.espresso:espresso-core:3.0.1&apos; compile project(&quot;:openingstartanimation&quot;)&#125;]]></content>
       <categories>
         <category>gradle</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[两个单链表相交问题2：判断两个无环链表是否相交]]></title>
+    <url>%2F2018%2F01%2F02%2F%E4%B8%A4%E4%B8%AA%E5%8D%95%E9%93%BE%E8%A1%A8%E7%9B%B8%E4%BA%A4%E9%97%AE%E9%A2%982%2F</url>
+    <content type="text"><![CDATA[这个问题是第一个问题的后续，判断链表无环的话就可以用这个方法做，因为两个无环的链表相交，最后的一个节点是一样的，用这个思路就可以做出来 总体思路如下： 链表1从头节点开始，一次走一步，记录从头节点走到最后节点的步数n1，并记录最后一个节点end1，链表2则相应地记录n2和end2 若end1！=end2，则两个链表不相交，若end1==end2，则比较n1和n2的大小来得出链表1和链表2哪个长，然后分别返回头节点，短的链表先走n1与n2相差的步数 两个链表同时一次一步，相遇节点即为第一个相交节点 具体代码如下1234567891011121314151617181920212223242526272829303132public Node noLoop(Node head1, Node head2) &#123; if (head1 == null &amp;&amp; head2 == null) &#123; return null; &#125; Node cur1 = head1; Node cur2 = head2; int n = 0; while (cur1.next != null) &#123; cur1 = cur1.next; n++; &#125; while (cur2.next != null) &#123; cur2 = cur2.next; n--; &#125; if (cur1 != cur2) &#123; return null; &#125; cur1 = n &gt; 0? head1:head2; cur2 = head1 == cur1? head2:head1; n = Math.abs(n); while (n != 0) &#123; cur1 = cur1.next; n--; &#125; while (cur1 != cur2) &#123; cur1 = cur1.next; cur2 = cur2.next; &#125; return cur1; &#125;]]></content>
+      <categories>
+        <category>算法</category>
       </categories>
   </entry>
   <entry>
