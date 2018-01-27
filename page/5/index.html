@@ -304,7 +304,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://gemus.site/2018/01/03/两个栈实现一个队列/">
+    <link itemprop="mainEntityOfPage" href="http://gemus.site/2018/01/03/两个单链表相交问题3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wong Zhenyu">
@@ -323,7 +323,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/01/03/两个栈实现一个队列/" itemprop="url">由两个栈实现一个队列</a></h1>
+                <a class="post-title-link" href="/2018/01/03/两个单链表相交问题3/" itemprop="url">两个单链表相交问题3：判断两个有环链表是否相交</a></h1>
         
 
         <div class="post-meta">
@@ -389,7 +389,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  183 字
+                  329 字
                 </span>
               
 
@@ -405,7 +405,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  2 分钟
                 </span>
               
             </div>
@@ -429,13 +429,14 @@
         
           
           
-栈和队列都是属于基本的数据结构，而栈的特点是后进先出，队列的特点是先进后出，我们只需要使用两个栈就可以实现从后进先出到先进先出
+若两个链表是有环的，则问题1当中我们就可以得到链表1和链表2的两个入环节点loop1和loop2，这是前提条件，具体解题思路如下：
 
-具体的实现算法如下：12345678910111213141516
+
+若loop1==loop2，则说明两个链表是入环节点一样的相
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/01/03/两个栈实现一个队列/#more" rel="contents">
+            <a class="btn" href="/2018/01/03/两个单链表相交问题3/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -664,7 +665,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://gemus.site/2018/01/02/两个单链表相交问题2/">
+    <link itemprop="mainEntityOfPage" href="http://gemus.site/2018/01/02/Java项目构建：基础单项目/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wong Zhenyu">
@@ -683,7 +684,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/01/02/两个单链表相交问题2/" itemprop="url">两个单链表相交问题2：判断两个无环链表是否相交</a></h1>
+                <a class="post-title-link" href="/2018/01/02/Java项目构建：基础单项目/" itemprop="url">Java项目构建：基础单项目</a></h1>
         
 
         <div class="post-meta">
@@ -718,8 +719,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/算法/" itemprop="url" rel="index">
-                    <span itemprop="name">算法</span>
+                  <a href="/categories/gradle/" itemprop="url" rel="index">
+                    <span itemprop="name">gradle</span>
                   </a>
                 </span>
 
@@ -749,7 +750,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  314 字
+                  352 字
                 </span>
               
 
@@ -788,13 +789,14 @@
       
         
           
-          这个问题是第一个问题的后续，判断链表无环的话就可以用这个方法做，因为两个无环的链表相交，最后的一个节点是一样的，用这个思路就可以做出来
-总体思路如下：
-链表1从头节点开始，一次走一步，记录从头节点走
+          
+构建一个Java项目其实十分地简单，只需在gradle中进行配置，然后执行就可以了
+
+Java插件要配置一个Java项目，首先我们地安装Java的插件，在gradle.build文件顶部写入以下代
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/01/02/两个单链表相交问题2/#more" rel="contents">
+            <a class="btn" href="/2018/01/02/Java项目构建：基础单项目/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1023,7 +1025,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://gemus.site/2018/01/02/Java项目构建：基础单项目/">
+    <link itemprop="mainEntityOfPage" href="http://gemus.site/2018/01/02/两个单链表相交问题2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wong Zhenyu">
@@ -1042,7 +1044,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/01/02/Java项目构建：基础单项目/" itemprop="url">Java项目构建：基础单项目</a></h1>
+                <a class="post-title-link" href="/2018/01/02/两个单链表相交问题2/" itemprop="url">两个单链表相交问题2：判断两个无环链表是否相交</a></h1>
         
 
         <div class="post-meta">
@@ -1077,8 +1079,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/gradle/" itemprop="url" rel="index">
-                    <span itemprop="name">gradle</span>
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
                   </a>
                 </span>
 
@@ -1108,7 +1110,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  352 字
+                  314 字
                 </span>
               
 
@@ -1147,14 +1149,13 @@
       
         
           
-          
-构建一个Java项目其实十分地简单，只需在gradle中进行配置，然后执行就可以了
-
-Java插件要配置一个Java项目，首先我们地安装Java的插件，在gradle.build文件顶部写入以下代
+          这个问题是第一个问题的后续，判断链表无环的话就可以用这个方法做，因为两个无环的链表相交，最后的一个节点是一样的，用这个思路就可以做出来
+总体思路如下：
+链表1从头节点开始，一次走一步，记录从头节点走
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/01/02/Java项目构建：基础单项目/#more" rel="contents">
+            <a class="btn" href="/2018/01/02/两个单链表相交问题2/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
