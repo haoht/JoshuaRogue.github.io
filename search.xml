@@ -25,19 +25,19 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[轻量级的对象池-享元模式]]></title>
-    <url>%2F2018%2F01%2F25%2F%E8%BD%BB%E9%87%8F%E7%BA%A7%E7%9A%84%E5%AF%B9%E8%B1%A1%E6%B1%A0-%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F%2F</url>
-    <content type="text"><![CDATA[享元模式又称Flyweight，代表轻量级的意思，适用于可能存在大量可重复对象的场景 这里举一个售卖火车票的例子 共享对象的接口，这里是火车票接口123public interface Ticket &#123; void showTicketInfo(String bunk);&#125; 具体对象类123456789101112131415public class TrainTicket implements Ticket &#123; public String from; public String to; public String bunk; public int price; public TrainTicket(String from, String to) &#123; this.from = from; this.to = to; price = new Random().nextInt(300); &#125; @Override public void showTicketInfo(String bunk) &#123; System.out.println(from + &quot;到&quot; + to + &quot;的&quot; + bunk +&quot;火车票价格：&quot; + price); &#125;&#125; 对象生产工厂12345678910111213public class TickFactory &#123; static Map&lt;String, Ticket&gt; stringTicketMap = new ConcurrentHashMap&lt;&gt;(); public static Ticket getTicket(String from, String to) &#123; String key = from + &quot;-&quot; + to; if (stringTicketMap.containsKey(key)) &#123; return stringTicketMap.get(key); &#125; else &#123; Ticket ticket =new TrainTicket(from, to); stringTicketMap.put(from + &quot;-&quot; + to,ticket); return ticket; &#125; &#125;&#125; 在这里我们使用了一个map来存放已经存在的对象，这也是享元模式的关键，这样就不用每次都重新创建对象，减少内存的消耗 使用如下 12345678910public class Main &#123; public static void main(String[] args) &#123; Ticket ticket = TickFactory.getTicket(&quot;长兴&quot;, &quot;武汉&quot;); ticket.showTicketInfo(&quot;上铺&quot;); Ticket ticket1 = TickFactory.getTicket(&quot;武汉&quot;, &quot;长兴&quot;); ticket1.showTicketInfo(&quot;软卧&quot;); Ticket ticket2 = TickFactory.getTicket(&quot;长兴&quot;, &quot;武汉&quot;); ticket2.showTicketInfo(&quot;上铺&quot;); &#125;&#125; 结果]]></content>
-      <categories>
-        <category>设计模式</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[打印两个有序链表的公共部分]]></title>
     <url>%2F2018%2F01%2F25%2F%E6%89%93%E5%8D%B0%E4%B8%A4%E4%B8%AA%E9%93%BE%E8%A1%A8%E7%9A%84%E5%85%AC%E5%85%B1%E9%83%A8%E5%88%86%2F</url>
     <content type="text"><![CDATA[打印两个有序链表的公共部分，思路如下： 若head1的值大于head2，则head2移动到下一节点，反之head1移动 若head1的值等于head2的值，则找到公共部分，开始打印 ##### 具体算法如下： 12345678910111213public void printCommonPart(Node head1, Node head2) &#123; while (head1 != null &amp;&amp; head2 != null) &#123; if (head1.value &gt; head2.value) &#123; head2 = head2.next; &#125;else if(head1.value &lt; head2.value) &#123; head1 = head1.next; &#125;else &#123; System.out.print(head1.value + &quot; &quot;); head1 = head1.next; head2 = head2.next; &#125; &#125; &#125;]]></content>
       <categories>
         <category>算法</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[轻量级的对象池-享元模式]]></title>
+    <url>%2F2018%2F01%2F25%2F%E8%BD%BB%E9%87%8F%E7%BA%A7%E7%9A%84%E5%AF%B9%E8%B1%A1%E6%B1%A0-%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[享元模式又称Flyweight，代表轻量级的意思，适用于可能存在大量可重复对象的场景 这里举一个售卖火车票的例子 共享对象的接口，这里是火车票接口123public interface Ticket &#123; void showTicketInfo(String bunk);&#125; 具体对象类123456789101112131415public class TrainTicket implements Ticket &#123; public String from; public String to; public String bunk; public int price; public TrainTicket(String from, String to) &#123; this.from = from; this.to = to; price = new Random().nextInt(300); &#125; @Override public void showTicketInfo(String bunk) &#123; System.out.println(from + &quot;到&quot; + to + &quot;的&quot; + bunk +&quot;火车票价格：&quot; + price); &#125;&#125; 对象生产工厂12345678910111213public class TickFactory &#123; static Map&lt;String, Ticket&gt; stringTicketMap = new ConcurrentHashMap&lt;&gt;(); public static Ticket getTicket(String from, String to) &#123; String key = from + &quot;-&quot; + to; if (stringTicketMap.containsKey(key)) &#123; return stringTicketMap.get(key); &#125; else &#123; Ticket ticket =new TrainTicket(from, to); stringTicketMap.put(from + &quot;-&quot; + to,ticket); return ticket; &#125; &#125;&#125; 在这里我们使用了一个map来存放已经存在的对象，这也是享元模式的关键，这样就不用每次都重新创建对象，减少内存的消耗 使用如下 12345678910public class Main &#123; public static void main(String[] args) &#123; Ticket ticket = TickFactory.getTicket(&quot;长兴&quot;, &quot;武汉&quot;); ticket.showTicketInfo(&quot;上铺&quot;); Ticket ticket1 = TickFactory.getTicket(&quot;武汉&quot;, &quot;长兴&quot;); ticket1.showTicketInfo(&quot;软卧&quot;); Ticket ticket2 = TickFactory.getTicket(&quot;长兴&quot;, &quot;武汉&quot;); ticket2.showTicketInfo(&quot;上铺&quot;); &#125;&#125; 结果]]></content>
+      <categories>
+        <category>设计模式</category>
       </categories>
   </entry>
   <entry>
@@ -145,19 +145,19 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[单链表的选择排序]]></title>
-    <url>%2F2018%2F01%2F16%2F%E5%8D%95%E9%93%BE%E8%A1%A8%E7%9A%84%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%2F</url>
-    <content type="text"><![CDATA[选择排序我们一般在数组中会使用选择排序对数组中的数字进行处理，而在单链表当中，问题就比较有难度了，解题思路如下： 开始时默认整个链表未排序，找到最小节点记为newHead 每次都在未排序的部分当中找到最小值的节点，把这个节点在未排序的链表中删除 把步骤2中删除的节点加入到已排序的链表中 全部处理完毕后返回newHead 具体算法如下：1234567891011121314151617181920212223242526272829303132333435363738public Node selectSort(Node head) &#123; Node tail = null; Node cur = head; Node smallPre = null; Node small = null; while (cur != null) &#123; small = cur; smallPre = getSmallestPreNode(cur); if (smallPre != null) &#123; small = smallPre.next; smallPre.next = small.next; &#125; cur = cur==small?cur.next:cur; if(tail == null) &#123; head = small; &#125; else &#123; tail.next = small; &#125; tail = small; &#125; return head; &#125; public Node getSmallestPreNode(Node head) &#123; Node smallPre = null; Node small = head; Node pre = head; Node cur = head.next; while (cur != null) &#123; if (cur.value &lt; small.value) &#123; smallPre = pre; small = cur; &#125; pre = cur; cur = cur.next; &#125; return smallPre; &#125;]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[Gradle Task]]></title>
     <url>%2F2018%2F01%2F16%2Fgradle%20task%2F</url>
     <content type="text"><![CDATA[task 的创建方式快捷方式我们一般使用最快捷的方式来创建任务，像这样 123task hello &lt;&lt; &#123; println &apos;Hello world!&apos;&#125; 动态方式我们可以使用groovy动态地创建任务，像这样 123453.times &#123; counter -&gt; task &quot;task$counter&quot; &lt;&lt; &#123; println &quot;this is task$counter&quot; &#125;&#125; 这里会生成task1、task2、task3这三个任务，我们可以运行其中的任何一个 这里之所以不介绍其他的方式，是因为gradle的版本迭代十分迅速，一些方法已经不适用了，所以这里只介绍这一种 task的行为周期gradle中的task有First、本身（这里暂时这么称呼）、Last以及后添加的行为，这里举个例子123456789101112131415task hello &lt;&lt; &#123; println &quot;this is main&quot;&#125;hello.doFirst&#123; println &quot;this is first&quot;&#125;hello.doLast&#123; println &quot;this is Last&quot;&#125;hello&lt;&lt; &#123; println &quot;this is add&quot;&#125; 运行后结果如下： 从中我们可以得出，task行为的执行次序是：doFirst，task本身，doLast，后来添加的任务 task间的依赖比较奇特的是，task之间也可以存在依赖，如下 1234567task one&lt;&lt; &#123; println &apos;one&apos;&#125;task two(dependsOn:one) &lt;&lt;&#123; println &apos;two&apos;&#125; task间存在的依赖很像类的构造函数，比如这里two依赖于one，如果我们看成two继承于one的话，就很容易理解了，这样two创建之间必须先实行one的构造函数，这里就是先执行one函数 task动态任务与task依赖结合使用除了上述的一种定义方法之外，我们也可以使用另一种方法来定义依赖1task1.dependsOn task2 这样执行task1之前就会先执行task2了，我们也可以使用动态生成的方式来看一下 12345673.times &#123; counter -&gt; task &quot;task$counter&quot; &lt;&lt; &#123; println &quot;this is task$counter&quot; &#125;&#125;task1.dependsOn task0, task2 运行结果如下 默认任务 在使用gradle中我们要执行一个任务，通常是这样1grale 任务名 但其实我们可以指定一个或多个任务作为默认任务，这样直接用gradle即可，例如12345defaultTasks &apos;hello&apos;task hello &lt;&lt; &#123; println &quot;this is main&quot;&#125; 结果如下]]></content>
       <categories>
         <category>gradle</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[单链表的选择排序]]></title>
+    <url>%2F2018%2F01%2F16%2F%E5%8D%95%E9%93%BE%E8%A1%A8%E7%9A%84%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%2F</url>
+    <content type="text"><![CDATA[选择排序我们一般在数组中会使用选择排序对数组中的数字进行处理，而在单链表当中，问题就比较有难度了，解题思路如下： 开始时默认整个链表未排序，找到最小节点记为newHead 每次都在未排序的部分当中找到最小值的节点，把这个节点在未排序的链表中删除 把步骤2中删除的节点加入到已排序的链表中 全部处理完毕后返回newHead 具体算法如下：1234567891011121314151617181920212223242526272829303132333435363738public Node selectSort(Node head) &#123; Node tail = null; Node cur = head; Node smallPre = null; Node small = null; while (cur != null) &#123; small = cur; smallPre = getSmallestPreNode(cur); if (smallPre != null) &#123; small = smallPre.next; smallPre.next = small.next; &#125; cur = cur==small?cur.next:cur; if(tail == null) &#123; head = small; &#125; else &#123; tail.next = small; &#125; tail = small; &#125; return head; &#125; public Node getSmallestPreNode(Node head) &#123; Node smallPre = null; Node small = head; Node pre = head; Node cur = head.next; while (cur != null) &#123; if (cur.value &lt; small.value) &#123; smallPre = pre; small = cur; &#125; pre = cur; cur = cur.next; &#125; return smallPre; &#125;]]></content>
+      <categories>
+        <category>算法</category>
       </categories>
   </entry>
   <entry>
@@ -193,19 +193,19 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[判断一个链表是否为回文结构]]></title>
-    <url>%2F2018%2F01%2F13%2F%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E9%93%BE%E8%A1%A8%E6%98%AF%E5%90%A6%E4%B8%BA%E5%9B%9E%E6%96%87%E7%BB%93%E6%9E%84%2F</url>
-    <content type="text"><![CDATA[回文结构，即链表为5-&gt;2-&gt;3-&gt;2-&gt;5这样的结构，本道题的两种解法一种为简单解法，另一种为进阶解法（多了时间复杂度的要求） 普通解法利用栈的先进后出特点，遍历的过程中把每个节点依次压入栈中，遍历完成后，从栈顶到栈底的值出现顺序会与原链表从头到尾的值反过来，可以根据这个来判断是否为回文结构 具体算法如下 123456789101112131415public boolean isPalindromel(Node head) &#123; Stack&lt;Node&gt; stack = new Stack&lt;&gt;(); Node cur = head; while (cur != null) &#123; stack.push(cur); cur = cur.next; &#125; while (head != null) &#123; if (head.value != stack.pop().value) &#123; return false; &#125; head = head.next; &#125; return true; &#125; 进阶解法进阶解法与普通解法的不同就是进阶解法只需要将链表中一半的节点压入，只需要让栈压出的节点与链表右半区的节点依次比较，即可得出链表是否为回文结构 具体算法如下 1234567891011121314151617181920212223public boolean isPalindrome2(Node head) &#123; if (head == null || head.next == null) &#123; return true; &#125; Node right = head.next; Node cur = head; while (cur.next != null &amp;&amp; cur.next.next != null) &#123; right = right.next; cur = cur.next.next; &#125; Stack&lt;Node&gt; stack = new Stack&lt;&gt;(); while (right != null) &#123; stack.push(right); right = right.next; &#125; while (!stack.isEmpty()) &#123; if (head.value != stack.pop().value) &#123; return false; &#125; head = head.next; &#125; return true; &#125; 其他思路 上面两种解法都使用了栈，也有一种不使用栈的解法，不过稍微复杂，具体思路如下： 反转右半区的结构，使整个链表反转，最后指向中间节点 使左半区的头节点leftstart和右半区的节点rightstart节点同时向中间节点移动，移动每一步都比较leftstart和rigerstart的值，若完全相等则使回文结构，否则不是 返回结果前恢复链表的结构 返回结果 具体代码如下 12345678910111213141516171819202122232425262728293031323334353637383940public boolean isPalindrome3(Node head) &#123; if (head == null || head.next == null) &#123; return true; &#125; Node n1 = head; Node n2 = head; while (n2.next != null &amp;&amp; n2.next.next != null) &#123; n1 = n1.next; n2 = n2.next.next; &#125; n2 = n1.next; n1.next = null; Node next = null; while (n2 != null) &#123; //反转右半区 next = n2.next; n2.next = n1; n1 = n2; n2 = next; &#125; next = n1; n2 = head; boolean res = true; while (n1 != null &amp;&amp; n2 != null) &#123; if (n1.value != n2.value) &#123; res = false; break; &#125; n1 = n1.next; n2 = n2.next; &#125; n1 = next.next; next.next = null; while (n1 != null) &#123; n2 = n1.next; n1.next = next; next = n1; n1 = n2; &#125; return res; &#125;]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[gradle中使用的编程语言-Groovy]]></title>
     <url>%2F2018%2F01%2F13%2Fgradle%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%9A%84%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80-Groovy%2F</url>
     <content type="text"><![CDATA[和Java一样，Groovy也是基于JVM虚拟机的一种动态语言，甚至Groovy完全兼容Java，当然，它也有很多Java没有的特性，比如支持闭包和DSL 关于Groovy字符串、集合、方法的使用这里就不说了，即使是从来都没有接触过Groovy，我们见到的时候也能明白，网上也有大量的资料，这里就不赘述了 闭包 闭包是Groovy的一个非常重要的特性，也是DSL的基础 首先，举一个简单的闭包例子 自定义task如下： 123456789101112task helloClosure &lt;&lt; &#123; //使用自定义闭包 customEach &#123; println it &#125;&#125;def customEach(closure) &#123; for (int i in 1..10)&#123; closure(i) &#125;&#125; 执行gradle helloClosure，我们得到 很容易看出，closure（i）中的i就是我们在helloClosure中的it了 我们也可以使用map向闭包传递参数12345678910111213task helloClosure &lt;&lt; &#123; eachMap&#123; k,v -&gt; println &quot;$&#123;k&#125; is $&#123;v&#125;&quot; &#125;&#125;def eachMap(closure) &#123; def map =[&quot;name&quot;:&quot;张三&quot;,&quot;age&quot;:18] map.each &#123; closure(it.key,it.value) &#125;&#125; 结果是这样的 闭包委托 在软件开发中我们经常用到委托模式，而在Groovy中直接提供了闭包委托，把具体的实现方法放到task中实现 123456789101112131415161718192021222324task configPerson &lt;&lt; &#123; person&#123; personName = &quot;张三&quot; personAge = 20 dumpPerson() &#125;&#125;class Person&#123; String personName int personAge def dumpPerson() &#123; println &quot;name is $&#123;personName&#125;, age is $&#123;personAge&#125;&quot; &#125;&#125;def person(closure) &#123; Person p = new Person() closure.delegate = p closure(p)&#125; DSLDSL指的是领域特定语言，在这里就是指的Gradle，是基于Groovy的，Gradle脚本就是按照Gradle DSL定义的]]></content>
       <categories>
         <category>gradle</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[判断一个链表是否为回文结构]]></title>
+    <url>%2F2018%2F01%2F13%2F%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E9%93%BE%E8%A1%A8%E6%98%AF%E5%90%A6%E4%B8%BA%E5%9B%9E%E6%96%87%E7%BB%93%E6%9E%84%2F</url>
+    <content type="text"><![CDATA[回文结构，即链表为5-&gt;2-&gt;3-&gt;2-&gt;5这样的结构，本道题的两种解法一种为简单解法，另一种为进阶解法（多了时间复杂度的要求） 普通解法利用栈的先进后出特点，遍历的过程中把每个节点依次压入栈中，遍历完成后，从栈顶到栈底的值出现顺序会与原链表从头到尾的值反过来，可以根据这个来判断是否为回文结构 具体算法如下 123456789101112131415public boolean isPalindromel(Node head) &#123; Stack&lt;Node&gt; stack = new Stack&lt;&gt;(); Node cur = head; while (cur != null) &#123; stack.push(cur); cur = cur.next; &#125; while (head != null) &#123; if (head.value != stack.pop().value) &#123; return false; &#125; head = head.next; &#125; return true; &#125; 进阶解法进阶解法与普通解法的不同就是进阶解法只需要将链表中一半的节点压入，只需要让栈压出的节点与链表右半区的节点依次比较，即可得出链表是否为回文结构 具体算法如下 1234567891011121314151617181920212223public boolean isPalindrome2(Node head) &#123; if (head == null || head.next == null) &#123; return true; &#125; Node right = head.next; Node cur = head; while (cur.next != null &amp;&amp; cur.next.next != null) &#123; right = right.next; cur = cur.next.next; &#125; Stack&lt;Node&gt; stack = new Stack&lt;&gt;(); while (right != null) &#123; stack.push(right); right = right.next; &#125; while (!stack.isEmpty()) &#123; if (head.value != stack.pop().value) &#123; return false; &#125; head = head.next; &#125; return true; &#125; 其他思路 上面两种解法都使用了栈，也有一种不使用栈的解法，不过稍微复杂，具体思路如下： 反转右半区的结构，使整个链表反转，最后指向中间节点 使左半区的头节点leftstart和右半区的节点rightstart节点同时向中间节点移动，移动每一步都比较leftstart和rigerstart的值，若完全相等则使回文结构，否则不是 返回结果前恢复链表的结构 返回结果 具体代码如下 12345678910111213141516171819202122232425262728293031323334353637383940public boolean isPalindrome3(Node head) &#123; if (head == null || head.next == null) &#123; return true; &#125; Node n1 = head; Node n2 = head; while (n2.next != null &amp;&amp; n2.next.next != null) &#123; n1 = n1.next; n2 = n2.next.next; &#125; n2 = n1.next; n1.next = null; Node next = null; while (n2 != null) &#123; //反转右半区 next = n2.next; n2.next = n1; n1 = n2; n2 = next; &#125; next = n1; n2 = head; boolean res = true; while (n1 != null &amp;&amp; n2 != null) &#123; if (n1.value != n2.value) &#123; res = false; break; &#125; n1 = n1.next; n2 = n2.next; &#125; n1 = next.next; next.next = null; while (n1 != null) &#123; n2 = n1.next; n1.next = next; next = n1; n1 = n2; &#125; return res; &#125;]]></content>
+      <categories>
+        <category>算法</category>
       </categories>
   </entry>
   <entry>
@@ -249,19 +249,19 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[反转部分单向链表]]></title>
-    <url>%2F2018%2F01%2F08%2F%E5%8F%8D%E8%BD%AC%E9%83%A8%E5%88%86%E5%8D%95%E5%90%91%E9%93%BE%E8%A1%A8%2F</url>
-    <content type="text"><![CDATA[反转部分单向链表比反转整个单链表略显复杂，具体思路如下： 规定部分链表的起始位置为from，结束位置为to，判断是否满足1&lt;=from&lt;=to&lt;=N（N为总节点数），不满足则世界返回头节点 找到第from-1个节点fPre和第to+1个节点tPos。fPre是要反转部分的前一个节点，tPos则是要反转部分的后一个节点。 如果fPre为null，说明反转部分是包含头节点的，则返回新的头节点，也就是没反转之前反转部分的最后一个几点，反转之后反转部分的第一个节点；如果fPre不为null，则返回旧的头节点 具体代码如下：123456789101112131415161718192021222324252627282930public Node reversePart(Node head, int from, int to) &#123; int len = 0; Node node1 = head; Node fPre = null; Node tPos = null; while (node1 != null) &#123; len ++; fPre = len==from - 1 ? node1 : fPre; tPos = len==to + 1 ? node1 : tPos; node1 = node1.next; &#125; if (from &gt; to || from &lt; 1 || to &gt; len) &#123; return head; &#125; node1 = fPre == null ? head : fPre.next; Node node2 = node1.next; node1.next = tPos; Node next = null; while (node2 != tPos) &#123; next = node2.next; node2.next = node1; node1 = node2; node2 = next; &#125; if (fPre != null) &#123; fPre.next = node1; return head; &#125; return node1; &#125;]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[gradle中的Setting文件与Build文件]]></title>
     <url>%2F2018%2F01%2F08%2Fgradle%E6%9E%84%E5%BB%BA%E8%84%9A%E6%9C%AC%E5%9F%BA%E7%A1%80%2F</url>
     <content type="text"><![CDATA[Setting文件Setting文件可以说是子项目（也可以说是Module）的配置文件，大多数setting.gradle的作用是为了配置子工程，再Gradle多工程是通过工程树表示的，如在Android studio中我们指定相应的module能在主工程当中使用，需要这样 1include &apos;:example&apos; Build文件Build是Project的配置文件，我们可以配置版本，插件，依赖库等等的信息，比较常见的就是Jcenter仓库的配置1234567891011121314buildscript &#123; repositories &#123; google() jcenter() &#125; dependencies &#123; classpath &apos;com.android.tools.build:gradle:3.0.1&apos; classpath &apos;com.github.dcendents:android-maven-gradle-plugin:1.4.1&apos; classpath &apos;com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.2&apos; // NOTE: Do not place your application dependencies here; they belong // in the individual module build.gradle files &#125;&#125;]]></content>
       <categories>
         <category>gradle</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[反转部分单向链表]]></title>
+    <url>%2F2018%2F01%2F08%2F%E5%8F%8D%E8%BD%AC%E9%83%A8%E5%88%86%E5%8D%95%E5%90%91%E9%93%BE%E8%A1%A8%2F</url>
+    <content type="text"><![CDATA[反转部分单向链表比反转整个单链表略显复杂，具体思路如下： 规定部分链表的起始位置为from，结束位置为to，判断是否满足1&lt;=from&lt;=to&lt;=N（N为总节点数），不满足则世界返回头节点 找到第from-1个节点fPre和第to+1个节点tPos。fPre是要反转部分的前一个节点，tPos则是要反转部分的后一个节点。 如果fPre为null，说明反转部分是包含头节点的，则返回新的头节点，也就是没反转之前反转部分的最后一个几点，反转之后反转部分的第一个节点；如果fPre不为null，则返回旧的头节点 具体代码如下：123456789101112131415161718192021222324252627282930public Node reversePart(Node head, int from, int to) &#123; int len = 0; Node node1 = head; Node fPre = null; Node tPos = null; while (node1 != null) &#123; len ++; fPre = len==from - 1 ? node1 : fPre; tPos = len==to + 1 ? node1 : tPos; node1 = node1.next; &#125; if (from &gt; to || from &lt; 1 || to &gt; len) &#123; return head; &#125; node1 = fPre == null ? head : fPre.next; Node node2 = node1.next; node1.next = tPos; Node next = null; while (node2 != tPos) &#123; next = node2.next; node2.next = node1; node1 = node2; node2 = next; &#125; if (fPre != null) &#123; fPre.next = node1; return head; &#125; return node1; &#125;]]></content>
+      <categories>
+        <category>算法</category>
       </categories>
   </entry>
   <entry>
@@ -313,17 +313,17 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[两个单链表相交问题3：判断两个有环链表是否相交]]></title>
-    <url>%2F2018%2F01%2F03%2F%E4%B8%A4%E4%B8%AA%E5%8D%95%E9%93%BE%E8%A1%A8%E7%9B%B8%E4%BA%A4%E9%97%AE%E9%A2%983%2F</url>
-    <content type="text"><![CDATA[若两个链表是有环的，则问题1当中我们就可以得到链表1和链表2的两个入环节点loop1和loop2，这是前提条件，具体解题思路如下： 若loop1==loop2，则说明两个链表是入环节点一样的相交，我们可以使用在问题2中使用的方法来找出入环节点（其实已经找出来了，就是loop1和loop2），若loop1！=loop2，则有可能是不相交或者入环节点不一样的相交，如下： 让链表1从loop1出发，若在回到loop1之前没有遇到loop2，则说明两个链表没有相交 让链表1从loop1出发，若在回到loop1之前遇到loop2，则说明两个链表是入环节点不一样的相交 具体算法如下：1234567891011121314151617181920212223242526272829303132333435363738public Node twoLoop(Node head1, Node loop1, Node head2, Node loop2) &#123; Node cur1 = null; Node cur2 = null; if (loop1 == loop2) &#123; cur1 = head1; cur2 = head2; int n = 0; while (cur1 != loop1) &#123; n++; cur1 = cur1.next; &#125; while (cur2 != loop2) &#123; n--; cur2 = cur2.next; &#125; cur1 = n &gt; 0? head1 : head2; cur2 = cur1 == head1 ? head2 :head1; n = Math.abs(n); while (n != 0) &#123; n--; cur1 = cur1.next; &#125; while (cur1 != cur2) &#123; cur1 = cur1.next; cur2 = cur2.next; &#125; return cur1; &#125; else &#123; cur1 = loop1.next; while (cur1 != loop1) &#123; if (cur1 == loop2) &#123; return loop1; &#125; cur1 = cur1.next; &#125; &#125; return null;&#125;]]></content>
+    <title><![CDATA[删除链表的中间节点和a/b处的节点]]></title>
+    <url>%2F2018%2F01%2F03%2F%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E4%B8%AD%E9%97%B4%E8%8A%82%E7%82%B9%2F</url>
+    <content type="text"><![CDATA[删除链表的中间节点这道题的解题思路还是比较简单的，我们只需用两个指针，一个指针每次走两步，而另一个指针每次走一步，当走两步的指针走到尽头时，另一个指针指向的即为中间节点的前驱节点 具体算法如下：12345678910111213141516public Node removeMidNode(Node head) &#123; if (head == null || head.next == null) &#123; return head; &#125; if (head.next.next == null) &#123; return head.next; &#125; Node pre = head; Node cur = head.next.next; while (cur.next != null &amp;&amp; cur.next.next != null) &#123; pre = pre.next; cur = cur.next.next; &#125; pre.next = pre.next.next; return head; &#125; 删除链表a/b处的节点这是删除中间节点的进阶问题，具体思路如下： 首先遍历链表，得到长度n，计算 double r = ((double)(a*n))/((double)b)的值，r向上取整之后的整数值代表该删除的节点 知道该删除的节点数之后找到该节点删除即可 具体算法如下： 1234567891011121314151617181920212223public Node removeByRatio(Node head, int a, int b) &#123; if (a &lt; 1 || a &gt; b) &#123; return head; &#125; int n = 0; Node cur = head; while (cur != null) &#123; n++; cur = cur.next; &#125; n = (int) (Math.ceil((double)(a * n))/(double)b); if (n == 1) &#123; head = head.next; &#125; if (n &gt; 1) &#123; cur = head; while (--n != 1) &#123; cur = cur.next; &#125; cur.next = cur.next.next; &#125; return head; &#125;]]></content>
       <categories>
         <category>算法</category>
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[删除链表的中间节点和a/b处的节点]]></title>
-    <url>%2F2018%2F01%2F03%2F%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E4%B8%AD%E9%97%B4%E8%8A%82%E7%82%B9%2F</url>
-    <content type="text"><![CDATA[删除链表的中间节点这道题的解题思路还是比较简单的，我们只需用两个指针，一个指针每次走两步，而另一个指针每次走一步，当走两步的指针走到尽头时，另一个指针指向的即为中间节点的前驱节点 具体算法如下：12345678910111213141516public Node removeMidNode(Node head) &#123; if (head == null || head.next == null) &#123; return head; &#125; if (head.next.next == null) &#123; return head.next; &#125; Node pre = head; Node cur = head.next.next; while (cur.next != null &amp;&amp; cur.next.next != null) &#123; pre = pre.next; cur = cur.next.next; &#125; pre.next = pre.next.next; return head; &#125; 删除链表a/b处的节点这是删除中间节点的进阶问题，具体思路如下： 首先遍历链表，得到长度n，计算 double r = ((double)(a*n))/((double)b)的值，r向上取整之后的整数值代表该删除的节点 知道该删除的节点数之后找到该节点删除即可 具体算法如下： 1234567891011121314151617181920212223public Node removeByRatio(Node head, int a, int b) &#123; if (a &lt; 1 || a &gt; b) &#123; return head; &#125; int n = 0; Node cur = head; while (cur != null) &#123; n++; cur = cur.next; &#125; n = (int) (Math.ceil((double)(a * n))/(double)b); if (n == 1) &#123; head = head.next; &#125; if (n &gt; 1) &#123; cur = head; while (--n != 1) &#123; cur = cur.next; &#125; cur.next = cur.next.next; &#125; return head; &#125;]]></content>
+    <title><![CDATA[两个单链表相交问题3：判断两个有环链表是否相交]]></title>
+    <url>%2F2018%2F01%2F03%2F%E4%B8%A4%E4%B8%AA%E5%8D%95%E9%93%BE%E8%A1%A8%E7%9B%B8%E4%BA%A4%E9%97%AE%E9%A2%983%2F</url>
+    <content type="text"><![CDATA[若两个链表是有环的，则问题1当中我们就可以得到链表1和链表2的两个入环节点loop1和loop2，这是前提条件，具体解题思路如下： 若loop1==loop2，则说明两个链表是入环节点一样的相交，我们可以使用在问题2中使用的方法来找出入环节点（其实已经找出来了，就是loop1和loop2），若loop1！=loop2，则有可能是不相交或者入环节点不一样的相交，如下： 让链表1从loop1出发，若在回到loop1之前没有遇到loop2，则说明两个链表没有相交 让链表1从loop1出发，若在回到loop1之前遇到loop2，则说明两个链表是入环节点不一样的相交 具体算法如下：1234567891011121314151617181920212223242526272829303132333435363738public Node twoLoop(Node head1, Node loop1, Node head2, Node loop2) &#123; Node cur1 = null; Node cur2 = null; if (loop1 == loop2) &#123; cur1 = head1; cur2 = head2; int n = 0; while (cur1 != loop1) &#123; n++; cur1 = cur1.next; &#125; while (cur2 != loop2) &#123; n--; cur2 = cur2.next; &#125; cur1 = n &gt; 0? head1 : head2; cur2 = cur1 == head1 ? head2 :head1; n = Math.abs(n); while (n != 0) &#123; n--; cur1 = cur1.next; &#125; while (cur1 != cur2) &#123; cur1 = cur1.next; cur2 = cur2.next; &#125; return cur1; &#125; else &#123; cur1 = loop1.next; while (cur1 != loop1) &#123; if (cur1 == loop2) &#123; return loop1; &#125; cur1 = cur1.next; &#125; &#125; return null;&#125;]]></content>
       <categories>
         <category>算法</category>
       </categories>
