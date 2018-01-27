@@ -33,19 +33,19 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[轻量级的对象池-享元模式]]></title>
-    <url>%2F2018%2F01%2F25%2F%E8%BD%BB%E9%87%8F%E7%BA%A7%E7%9A%84%E5%AF%B9%E8%B1%A1%E6%B1%A0-%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F%2F</url>
-    <content type="text"><![CDATA[享元模式又称Flyweight，代表轻量级的意思，适用于可能存在大量可重复对象的场景 这里举一个售卖火车票的例子 共享对象的接口，这里是火车票接口123public interface Ticket &#123; void showTicketInfo(String bunk);&#125; 具体对象类123456789101112131415public class TrainTicket implements Ticket &#123; public String from; public String to; public String bunk; public int price; public TrainTicket(String from, String to) &#123; this.from = from; this.to = to; price = new Random().nextInt(300); &#125; @Override public void showTicketInfo(String bunk) &#123; System.out.println(from + &quot;到&quot; + to + &quot;的&quot; + bunk +&quot;火车票价格：&quot; + price); &#125;&#125; 对象生产工厂12345678910111213public class TickFactory &#123; static Map&lt;String, Ticket&gt; stringTicketMap = new ConcurrentHashMap&lt;&gt;(); public static Ticket getTicket(String from, String to) &#123; String key = from + &quot;-&quot; + to; if (stringTicketMap.containsKey(key)) &#123; return stringTicketMap.get(key); &#125; else &#123; Ticket ticket =new TrainTicket(from, to); stringTicketMap.put(from + &quot;-&quot; + to,ticket); return ticket; &#125; &#125;&#125; 在这里我们使用了一个map来存放已经存在的对象，这也是享元模式的关键，这样就不用每次都重新创建对象，减少内存的消耗 使用如下 12345678910public class Main &#123; public static void main(String[] args) &#123; Ticket ticket = TickFactory.getTicket(&quot;长兴&quot;, &quot;武汉&quot;); ticket.showTicketInfo(&quot;上铺&quot;); Ticket ticket1 = TickFactory.getTicket(&quot;武汉&quot;, &quot;长兴&quot;); ticket1.showTicketInfo(&quot;软卧&quot;); Ticket ticket2 = TickFactory.getTicket(&quot;长兴&quot;, &quot;武汉&quot;); ticket2.showTicketInfo(&quot;上铺&quot;); &#125;&#125; 结果]]></content>
-      <categories>
-        <category>设计模式</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[打印两个有序链表的公共部分]]></title>
     <url>%2F2018%2F01%2F25%2F%E6%89%93%E5%8D%B0%E4%B8%A4%E4%B8%AA%E9%93%BE%E8%A1%A8%E7%9A%84%E5%85%AC%E5%85%B1%E9%83%A8%E5%88%86%2F</url>
     <content type="text"><![CDATA[打印两个有序链表的公共部分，思路如下： 若head1的值大于head2，则head2移动到下一节点，反之head1移动 若head1的值等于head2的值，则找到公共部分，开始打印 ##### 具体算法如下： 12345678910111213public void printCommonPart(Node head1, Node head2) &#123; while (head1 != null &amp;&amp; head2 != null) &#123; if (head1.value &gt; head2.value) &#123; head2 = head2.next; &#125;else if(head1.value &lt; head2.value) &#123; head1 = head1.next; &#125;else &#123; System.out.print(head1.value + &quot; &quot;); head1 = head1.next; head2 = head2.next; &#125; &#125; &#125;]]></content>
       <categories>
         <category>算法</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[轻量级的对象池-享元模式]]></title>
+    <url>%2F2018%2F01%2F25%2F%E8%BD%BB%E9%87%8F%E7%BA%A7%E7%9A%84%E5%AF%B9%E8%B1%A1%E6%B1%A0-%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[享元模式又称Flyweight，代表轻量级的意思，适用于可能存在大量可重复对象的场景 这里举一个售卖火车票的例子 共享对象的接口，这里是火车票接口123public interface Ticket &#123; void showTicketInfo(String bunk);&#125; 具体对象类123456789101112131415public class TrainTicket implements Ticket &#123; public String from; public String to; public String bunk; public int price; public TrainTicket(String from, String to) &#123; this.from = from; this.to = to; price = new Random().nextInt(300); &#125; @Override public void showTicketInfo(String bunk) &#123; System.out.println(from + &quot;到&quot; + to + &quot;的&quot; + bunk +&quot;火车票价格：&quot; + price); &#125;&#125; 对象生产工厂12345678910111213public class TickFactory &#123; static Map&lt;String, Ticket&gt; stringTicketMap = new ConcurrentHashMap&lt;&gt;(); public static Ticket getTicket(String from, String to) &#123; String key = from + &quot;-&quot; + to; if (stringTicketMap.containsKey(key)) &#123; return stringTicketMap.get(key); &#125; else &#123; Ticket ticket =new TrainTicket(from, to); stringTicketMap.put(from + &quot;-&quot; + to,ticket); return ticket; &#125; &#125;&#125; 在这里我们使用了一个map来存放已经存在的对象，这也是享元模式的关键，这样就不用每次都重新创建对象，减少内存的消耗 使用如下 12345678910public class Main &#123; public static void main(String[] args) &#123; Ticket ticket = TickFactory.getTicket(&quot;长兴&quot;, &quot;武汉&quot;); ticket.showTicketInfo(&quot;上铺&quot;); Ticket ticket1 = TickFactory.getTicket(&quot;武汉&quot;, &quot;长兴&quot;); ticket1.showTicketInfo(&quot;软卧&quot;); Ticket ticket2 = TickFactory.getTicket(&quot;长兴&quot;, &quot;武汉&quot;); ticket2.showTicketInfo(&quot;上铺&quot;); &#125;&#125; 结果]]></content>
+      <categories>
+        <category>设计模式</category>
       </categories>
   </entry>
   <entry>
@@ -305,17 +305,17 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[由两个栈实现一个队列]]></title>
-    <url>%2F2018%2F01%2F03%2F%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E9%98%9F%E5%88%97%2F</url>
-    <content type="text"><![CDATA[栈和队列都是属于基本的数据结构，而栈的特点是后进先出，队列的特点是先进后出，我们只需要使用两个栈就可以实现从后进先出到先进先出 具体的实现算法如下：123456789101112131415161718192021222324public class TwoStackQueue &#123; public Stack&lt;Integer&gt; firstStack; public Stack&lt;Integer&gt; secondStack; public TwoStackQueue() &#123; firstStack = new Stack&lt;&gt;(); secondStack = new Stack&lt;&gt;(); &#125; public void addInt(Integer integer) &#123; firstStack.push(integer); &#125; public Integer getInt() &#123; if (firstStack.empty()&amp;&amp;secondStack.empty()) &#123; throw new RuntimeException(&quot;No int in the stack!&quot;); &#125;else if(secondStack.empty()) &#123; while (!firstStack.empty()) &#123; secondStack.push(firstStack.pop()); &#125; &#125; return secondStack.pop(); &#125;&#125; 这里只实现了stack的pop操作，如果像实现peek操作的话只需再实现一遍，把pop改为peek即可]]></content>
+    <title><![CDATA[两个单链表相交问题3：判断两个有环链表是否相交]]></title>
+    <url>%2F2018%2F01%2F03%2F%E4%B8%A4%E4%B8%AA%E5%8D%95%E9%93%BE%E8%A1%A8%E7%9B%B8%E4%BA%A4%E9%97%AE%E9%A2%983%2F</url>
+    <content type="text"><![CDATA[若两个链表是有环的，则问题1当中我们就可以得到链表1和链表2的两个入环节点loop1和loop2，这是前提条件，具体解题思路如下： 若loop1==loop2，则说明两个链表是入环节点一样的相交，我们可以使用在问题2中使用的方法来找出入环节点（其实已经找出来了，就是loop1和loop2），若loop1！=loop2，则有可能是不相交或者入环节点不一样的相交，如下： 让链表1从loop1出发，若在回到loop1之前没有遇到loop2，则说明两个链表没有相交 让链表1从loop1出发，若在回到loop1之前遇到loop2，则说明两个链表是入环节点不一样的相交 具体算法如下：1234567891011121314151617181920212223242526272829303132333435363738public Node twoLoop(Node head1, Node loop1, Node head2, Node loop2) &#123; Node cur1 = null; Node cur2 = null; if (loop1 == loop2) &#123; cur1 = head1; cur2 = head2; int n = 0; while (cur1 != loop1) &#123; n++; cur1 = cur1.next; &#125; while (cur2 != loop2) &#123; n--; cur2 = cur2.next; &#125; cur1 = n &gt; 0? head1 : head2; cur2 = cur1 == head1 ? head2 :head1; n = Math.abs(n); while (n != 0) &#123; n--; cur1 = cur1.next; &#125; while (cur1 != cur2) &#123; cur1 = cur1.next; cur2 = cur2.next; &#125; return cur1; &#125; else &#123; cur1 = loop1.next; while (cur1 != loop1) &#123; if (cur1 == loop2) &#123; return loop1; &#125; cur1 = cur1.next; &#125; &#125; return null;&#125;]]></content>
       <categories>
         <category>算法</category>
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[两个单链表相交问题3：判断两个有环链表是否相交]]></title>
-    <url>%2F2018%2F01%2F03%2F%E4%B8%A4%E4%B8%AA%E5%8D%95%E9%93%BE%E8%A1%A8%E7%9B%B8%E4%BA%A4%E9%97%AE%E9%A2%983%2F</url>
-    <content type="text"><![CDATA[若两个链表是有环的，则问题1当中我们就可以得到链表1和链表2的两个入环节点loop1和loop2，这是前提条件，具体解题思路如下： 若loop1==loop2，则说明两个链表是入环节点一样的相交，我们可以使用在问题2中使用的方法来找出入环节点（其实已经找出来了，就是loop1和loop2），若loop1！=loop2，则有可能是不相交或者入环节点不一样的相交，如下： 让链表1从loop1出发，若在回到loop1之前没有遇到loop2，则说明两个链表没有相交 让链表1从loop1出发，若在回到loop1之前遇到loop2，则说明两个链表是入环节点不一样的相交 具体算法如下：1234567891011121314151617181920212223242526272829303132333435363738public Node twoLoop(Node head1, Node loop1, Node head2, Node loop2) &#123; Node cur1 = null; Node cur2 = null; if (loop1 == loop2) &#123; cur1 = head1; cur2 = head2; int n = 0; while (cur1 != loop1) &#123; n++; cur1 = cur1.next; &#125; while (cur2 != loop2) &#123; n--; cur2 = cur2.next; &#125; cur1 = n &gt; 0? head1 : head2; cur2 = cur1 == head1 ? head2 :head1; n = Math.abs(n); while (n != 0) &#123; n--; cur1 = cur1.next; &#125; while (cur1 != cur2) &#123; cur1 = cur1.next; cur2 = cur2.next; &#125; return cur1; &#125; else &#123; cur1 = loop1.next; while (cur1 != loop1) &#123; if (cur1 == loop2) &#123; return loop1; &#125; cur1 = cur1.next; &#125; &#125; return null;&#125;]]></content>
+    <title><![CDATA[由两个栈实现一个队列]]></title>
+    <url>%2F2018%2F01%2F03%2F%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E9%98%9F%E5%88%97%2F</url>
+    <content type="text"><![CDATA[栈和队列都是属于基本的数据结构，而栈的特点是后进先出，队列的特点是先进后出，我们只需要使用两个栈就可以实现从后进先出到先进先出 具体的实现算法如下：123456789101112131415161718192021222324public class TwoStackQueue &#123; public Stack&lt;Integer&gt; firstStack; public Stack&lt;Integer&gt; secondStack; public TwoStackQueue() &#123; firstStack = new Stack&lt;&gt;(); secondStack = new Stack&lt;&gt;(); &#125; public void addInt(Integer integer) &#123; firstStack.push(integer); &#125; public Integer getInt() &#123; if (firstStack.empty()&amp;&amp;secondStack.empty()) &#123; throw new RuntimeException(&quot;No int in the stack!&quot;); &#125;else if(secondStack.empty()) &#123; while (!firstStack.empty()) &#123; secondStack.push(firstStack.pop()); &#125; &#125; return secondStack.pop(); &#125;&#125; 这里只实现了stack的pop操作，如果像实现peek操作的话只需再实现一遍，把pop改为peek即可]]></content>
       <categories>
         <category>算法</category>
       </categories>
@@ -337,11 +337,11 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[Java项目构建：基础单项目]]></title>
-    <url>%2F2018%2F01%2F02%2FJava%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%8D%95%E9%A1%B9%E7%9B%AE%2F</url>
-    <content type="text"><![CDATA[构建一个Java项目其实十分地简单，只需在gradle中进行配置，然后执行就可以了 Java插件要配置一个Java项目，首先我们地安装Java的插件，在gradle.build文件顶部写入以下代码1apply plugin: &apos;java&apos; 再执行任务安装插件 这样Java的插件就安装完毕了 Android插件在Android开发中，我们在gradle.build文件中可以看到这样的代码 1apply plugin: &apos;com.android.application&apos; 这和刚刚示例的Java插件是同样的用法，不过Android studio在初始化项目的时候已经帮我们默认执行了动作，所以我们需要手动地执行 依赖外部依赖Java项目中的外部依赖其实和Android项目当中的外部依赖是一样的，都是添加maven库等操作，如下所示： 1234repositories &#123; google() jcenter() &#125; 加入依赖在Android项目中，这个一般在我们使用第三方库的时候用到很多，当然，即使我们不使用第三方库，Android studio在初始化时也会为我们配置很多默认的依赖项 123456789dependencies &#123; implementation fileTree(dir: &apos;libs&apos;, include: [&apos;*.jar&apos;]) implementation &apos;com.android.support:appcompat-v7:26.1.0&apos; implementation &apos;com.android.support.constraint:constraint-layout:1.0.2&apos; testImplementation &apos;junit:junit:4.12&apos; androidTestImplementation &apos;com.android.support.test:runner:1.0.1&apos; androidTestImplementation &apos;com.android.support.test.espresso:espresso-core:3.0.1&apos; compile project(&quot;:openingstartanimation&quot;)&#125;]]></content>
+    <title><![CDATA[用Github桌面版实现最简单的hexo部署到Github.io]]></title>
+    <url>%2F2018%2F01%2F02%2F%E7%94%A8Github%E6%A1%8C%E9%9D%A2%E7%89%88%E5%AE%9E%E7%8E%B0%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84hexo%E9%83%A8%E7%BD%B2%E5%88%B0Github%2F</url>
+    <content type="text"><![CDATA[今天准备把hexo部署到github.io的时候参考了网上几篇文章，发现写的都十分地费劲，不是老是出错，就是步骤麻烦，特地写一篇来记录一下我的方法，当然，这篇文章是建立在在本地已经写好hexo的情况下的 首先，下载github桌面版 地址如下：GitHub桌面版 嗯 做完这一步之后，再github上创建项目（这一步大家应该都已经做完了，没做完的话可以参考一下这里Github.io 第二步，用github桌面版（要登陆）把项目clone下来 clone到一个空目录，之后就把hexo根目录下的文件全都复制黏贴到这个clone下来的目录下就好了，这样做不会有权限的冲突（哈哈哈哈）再后一步，安装hexo-deployer-git这一步很简单，在根目录执行如下命令 npm install hexo-deployer-git –save 然后修改hexo的配置文件（注意是hexo的不是theme的）12345deploy: type: git repo: &lt;repository url&gt; //SSH branch: [branch] //当前的分支，一般是master message: [message] // 可不填 SSH可以在这里获得，HTTPS和SSH可用右上角切换 最后一步，在hexo的根目录下执行如下命令123$ hexo clean$ hexo g$ hexo d 成功的话就可以在github的项目setting里面看到自己的博客主页了！如果要自己的域名的话，可以这样做参考]]></content>
       <categories>
-        <category>gradle</category>
+        <category>Git</category>
       </categories>
   </entry>
   <entry>
@@ -353,11 +353,11 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[用Github桌面版实现最简单的hexo部署到Github.io]]></title>
-    <url>%2F2018%2F01%2F02%2F%E7%94%A8Github%E6%A1%8C%E9%9D%A2%E7%89%88%E5%AE%9E%E7%8E%B0%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84hexo%E9%83%A8%E7%BD%B2%E5%88%B0Github%2F</url>
-    <content type="text"><![CDATA[今天准备把hexo部署到github.io的时候参考了网上几篇文章，发现写的都十分地费劲，不是老是出错，就是步骤麻烦，特地写一篇来记录一下我的方法，当然，这篇文章是建立在在本地已经写好hexo的情况下的 首先，下载github桌面版 地址如下：GitHub桌面版 嗯 做完这一步之后，再github上创建项目（这一步大家应该都已经做完了，没做完的话可以参考一下这里Github.io 第二步，用github桌面版（要登陆）把项目clone下来 clone到一个空目录，之后就把hexo根目录下的文件全都复制黏贴到这个clone下来的目录下就好了，这样做不会有权限的冲突（哈哈哈哈）再后一步，安装hexo-deployer-git这一步很简单，在根目录执行如下命令 npm install hexo-deployer-git –save 然后修改hexo的配置文件（注意是hexo的不是theme的）12345deploy: type: git repo: &lt;repository url&gt; //SSH branch: [branch] //当前的分支，一般是master message: [message] // 可不填 SSH可以在这里获得，HTTPS和SSH可用右上角切换 最后一步，在hexo的根目录下执行如下命令123$ hexo clean$ hexo g$ hexo d 成功的话就可以在github的项目setting里面看到自己的博客主页了！如果要自己的域名的话，可以这样做参考]]></content>
+    <title><![CDATA[Java项目构建：基础单项目]]></title>
+    <url>%2F2018%2F01%2F02%2FJava%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%8D%95%E9%A1%B9%E7%9B%AE%2F</url>
+    <content type="text"><![CDATA[构建一个Java项目其实十分地简单，只需在gradle中进行配置，然后执行就可以了 Java插件要配置一个Java项目，首先我们地安装Java的插件，在gradle.build文件顶部写入以下代码1apply plugin: &apos;java&apos; 再执行任务安装插件 这样Java的插件就安装完毕了 Android插件在Android开发中，我们在gradle.build文件中可以看到这样的代码 1apply plugin: &apos;com.android.application&apos; 这和刚刚示例的Java插件是同样的用法，不过Android studio在初始化项目的时候已经帮我们默认执行了动作，所以我们需要手动地执行 依赖外部依赖Java项目中的外部依赖其实和Android项目当中的外部依赖是一样的，都是添加maven库等操作，如下所示： 1234repositories &#123; google() jcenter() &#125; 加入依赖在Android项目中，这个一般在我们使用第三方库的时候用到很多，当然，即使我们不使用第三方库，Android studio在初始化时也会为我们配置很多默认的依赖项 123456789dependencies &#123; implementation fileTree(dir: &apos;libs&apos;, include: [&apos;*.jar&apos;]) implementation &apos;com.android.support:appcompat-v7:26.1.0&apos; implementation &apos;com.android.support.constraint:constraint-layout:1.0.2&apos; testImplementation &apos;junit:junit:4.12&apos; androidTestImplementation &apos;com.android.support.test:runner:1.0.1&apos; androidTestImplementation &apos;com.android.support.test.espresso:espresso-core:3.0.1&apos; compile project(&quot;:openingstartanimation&quot;)&#125;]]></content>
       <categories>
-        <category>Git</category>
+        <category>gradle</category>
       </categories>
   </entry>
   <entry>
