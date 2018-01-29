@@ -86,17 +86,17 @@
 
 
 
-<meta name="description" content="状态模式比较常见的是运用在登陆或未登陆的情况下进行，因为在用户登陆与未登陆这两种情况下，对相同的动作会有不同的反应  状态模式的使用一般分为以下几步 定义状态接口以及相应的动作1234public interface State &amp;#123;    void statement();    void report();&amp;#125; 定义每种不同的状态相应的动画 登陆状态时的动作 12345678">
+<meta name="description" content="此题目要求的是将重复值的节点删去，也就是说在链表中，同一个值只能有一个节点，这道题有两种解法，一种是利用哈希表，另一种则是先选择排序，然后再进行删除 方法一：利用哈希表具体过程如下：  生成一个哈希表，因为头节点是不用删除的节点，所以将头节点的值放入哈希表 从头节点的下一个节点开始往后遍历节点，假设当前遍历到cur节点，先检查cur的值是否再哈希表中，如果再，则说明cur节点的值是之前出现过的，就">
 <meta property="og:type" content="article">
-<meta property="og:title" content="对象内部的策略改变-状态模式">
-<meta property="og:url" content="http://gemus.site/2018/01/18/对象内部的改变-状态模式/index.html">
+<meta property="og:title" content="删除无序单链表中重复出现的节点">
+<meta property="og:url" content="http://gemus.site/2018/01/29/deletePoint/index.html">
 <meta property="og:site_name" content="卖欠账包的王大麻">
-<meta property="og:description" content="状态模式比较常见的是运用在登陆或未登陆的情况下进行，因为在用户登陆与未登陆这两种情况下，对相同的动作会有不同的反应  状态模式的使用一般分为以下几步 定义状态接口以及相应的动作1234public interface State &amp;#123;    void statement();    void report();&amp;#125; 定义每种不同的状态相应的动画 登陆状态时的动作 12345678">
+<meta property="og:description" content="此题目要求的是将重复值的节点删去，也就是说在链表中，同一个值只能有一个节点，这道题有两种解法，一种是利用哈希表，另一种则是先选择排序，然后再进行删除 方法一：利用哈希表具体过程如下：  生成一个哈希表，因为头节点是不用删除的节点，所以将头节点的值放入哈希表 从头节点的下一个节点开始往后遍历节点，假设当前遍历到cur节点，先检查cur的值是否再哈希表中，如果再，则说明cur节点的值是之前出现过的，就">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-26T07:47:16.113Z">
+<meta property="og:updated_time" content="2018-01-29T04:12:15.445Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="对象内部的策略改变-状态模式">
-<meta name="twitter:description" content="状态模式比较常见的是运用在登陆或未登陆的情况下进行，因为在用户登陆与未登陆这两种情况下，对相同的动作会有不同的反应  状态模式的使用一般分为以下几步 定义状态接口以及相应的动作1234public interface State &amp;#123;    void statement();    void report();&amp;#125; 定义每种不同的状态相应的动画 登陆状态时的动作 12345678">
+<meta name="twitter:title" content="删除无序单链表中重复出现的节点">
+<meta name="twitter:description" content="此题目要求的是将重复值的节点删去，也就是说在链表中，同一个值只能有一个节点，这道题有两种解法，一种是利用哈希表，另一种则是先选择排序，然后再进行删除 方法一：利用哈希表具体过程如下：  生成一个哈希表，因为头节点是不用删除的节点，所以将头节点的值放入哈希表 从头节点的下一个节点开始往后遍历节点，假设当前遍历到cur节点，先检查cur的值是否再哈希表中，如果再，则说明cur节点的值是之前出现过的，就">
 
 
 
@@ -126,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://gemus.site/2018/01/18/对象内部的改变-状态模式/"/>
+  <link rel="canonical" href="http://gemus.site/2018/01/29/deletePoint/"/>
 
 
 
 
 
-  <title>对象内部的策略改变-状态模式 | 卖欠账包的王大麻</title>
+  <title>删除无序单链表中重复出现的节点 | 卖欠账包的王大麻</title>
   
 
 
@@ -304,7 +304,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://gemus.site/2018/01/18/对象内部的改变-状态模式/">
+    <link itemprop="mainEntityOfPage" href="http://gemus.site/2018/01/29/deletePoint/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wong Zhenyu">
@@ -321,7 +321,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">对象内部的策略改变-状态模式</h1>
+          <h1 class="post-title" itemprop="name headline">删除无序单链表中重复出现的节点</h1>
         
 
         <div class="post-meta">
@@ -333,8 +333,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-18T12:02:04+08:00">
-                2018-01-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-29T10:37:52+08:00">
+                2018-01-29
               </time>
             
 
@@ -356,8 +356,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/设计模式/" itemprop="url" rel="index">
-                    <span itemprop="name">设计模式</span>
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
                   </a>
                 </span>
 
@@ -387,7 +387,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  494 字
+                  442 字
                 </span>
               
 
@@ -424,27 +424,19 @@
       
 
       
-        <blockquote>
-<p>状态模式比较常见的是运用在登陆或未登陆的情况下进行，因为在用户登陆与未登陆这两种情况下，对相同的动作会有不同的反应</p>
-</blockquote>
-<p>状态模式的使用一般分为以下几步</p>
-<h5 id="定义状态接口以及相应的动作"><a href="#定义状态接口以及相应的动作" class="headerlink" title="定义状态接口以及相应的动作"></a>定义状态接口以及相应的动作</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public interface State &#123;</span><br><span class="line">    void statement();</span><br><span class="line">    void report();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="定义每种不同的状态相应的动画"><a href="#定义每种不同的状态相应的动画" class="headerlink" title="定义每种不同的状态相应的动画"></a>定义每种不同的状态相应的动画</h5><ol>
-<li><p>登陆状态时的动作</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class LogOnState implements State &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void statement() &#123;</span><br><span class="line">        System.out.println(&quot;statement  fail&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void report() &#123;</span><br><span class="line">        System.out.println(&quot;report fail&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>未登陆状态时的动作</p>
-</li>
+        <p>此题目要求的是将重复值的节点删去，也就是说在链表中，同一个值只能有一个节点，这道题有两种解法，一种是利用哈希表，另一种则是先选择排序，然后再进行删除</p>
+<h4 id="方法一：利用哈希表"><a href="#方法一：利用哈希表" class="headerlink" title="方法一：利用哈希表"></a>方法一：利用哈希表</h4><p>具体过程如下：</p>
+<ol>
+<li>生成一个哈希表，因为头节点是不用删除的节点，所以将头节点的值放入哈希表</li>
+<li>从头节点的下一个节点开始往后遍历节点，假设当前遍历到cur节点，先检查cur的值是否再哈希表中，如果再，则说明cur节点的值是之前出现过的，就将cur节点删除，删除的方式是将最近一个没有被删除的节点pre连接到cur的下一个节点，即pre.next=cur.next。如果不在，将cur节点的值放入哈希表，同时令pre=cur，即更新最近一个没有被删除的节点</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class LogOutState implements State &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void statement() &#123;</span><br><span class="line">        System.out.println(&quot;statement success&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void report() &#123;</span><br><span class="line">        System.out.println(&quot;report success&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="定义状态所对应的实体类，比如说这里的User类"><a href="#定义状态所对应的实体类，比如说这里的User类" class="headerlink" title="定义状态所对应的实体类，比如说这里的User类"></a>定义状态所对应的实体类，比如说这里的User类</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">public class User &#123;</span><br><span class="line">    private State state = new LogOutState();</span><br><span class="line">    public User() &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private void setState(State state) &#123;</span><br><span class="line">        this.state = state;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void LogOn() &#123;</span><br><span class="line">        setState(new LogOnState());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void LogOut() &#123;</span><br><span class="line">        setState(new LogOutState());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void statement() &#123;</span><br><span class="line">        state.statement();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void report() &#123;</span><br><span class="line">        state.report();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>这里定义了一个默认的状态就是未登陆的，这和实际中的场景相似</p>
+<p>算法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public void removeRep1(Node head) &#123;</span><br><span class="line">        if (head == null) &#123;</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">        HashSet&lt;Integer&gt; set = new HashSet&lt;&gt;();</span><br><span class="line">        Node pre = head;</span><br><span class="line">        Node cur = head.next;</span><br><span class="line">        set.add(head.value);</span><br><span class="line">        while (cur != null) &#123;</span><br><span class="line">            if (set.contains(cur.value)) &#123;</span><br><span class="line">                pre.next = cur.next;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                set.add(cur.value);</span><br><span class="line">                pre = cur;</span><br><span class="line">            &#125;</span><br><span class="line">            cur = cur.next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="方法二：类似选择排序的过程"><a href="#方法二：类似选择排序的过程" class="headerlink" title="方法二：类似选择排序的过程"></a>方法二：类似选择排序的过程</h4><blockquote>
+<p>注意：这道题是基于已排序好的链表上的</p>
 </blockquote>
-<h5 id="实现代码如下："><a href="#实现代码如下：" class="headerlink" title="实现代码如下："></a>实现代码如下：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public class Main &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        User user = new User();</span><br><span class="line">        user.statement();</span><br><span class="line">        user.report();</span><br><span class="line">        user.LogOn();</span><br><span class="line">        user.statement();</span><br><span class="line">        user.report();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>当然，这里只是最简单的示例，在实际开发过程中状态模式的作用这里还没有体现出来，总结来说就是，策略模式时去掉了在“外部的”if-else，而状态模式则是去掉了内部的”“if-else，两种设计模式的不同就是：在策略模式下，策略是由用户选择的，而在状态模式下，策略则是由类内部自动改变，不需要用户的干预，适合于像处理用户的登陆状态与未登陆状态这样的情况。</p>
-</blockquote>
+<p>具体思路为：获得第一个新值，然后往后检查所有值为此值的节点全部删除</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public void removeRep2(Node head) &#123;</span><br><span class="line">        Node cur = head;</span><br><span class="line">        Node pre = null;</span><br><span class="line">        Node next = null;</span><br><span class="line">        while (cur != null) &#123;</span><br><span class="line">            pre = cur;</span><br><span class="line">            next = cur.next;</span><br><span class="line">            while (next != null) &#123;</span><br><span class="line">                if (cur.value == next.value) &#123;</span><br><span class="line">                    pre.next = next.next;</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                    pre = next;</span><br><span class="line">                &#125;</span><br><span class="line">                next = next.next;</span><br><span class="line">            &#125;</span><br><span class="line">            cur = cur.next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -465,14 +457,14 @@
       
       
       
-      	<h3> 相关文章：</h3><ul class="related-posts"><li><a href="/2018/01/17/容器中的游标-迭代器模式/">容器中的游标-迭代器模式</a></li><li><a href="/2018/01/19/Builder模式/">Builder模式的简单示例</a></li><li><a href="/2018/01/17/Java中内置的设计模式-观察者模式/">Java中内置的设计模式-观察者模式</a></li><li><a href="/2018/01/06/Intance单例模式/">单例模式的使用</a></li><li><a href="/2017/11/06/MVP模式中的小技巧：软引用与弱引用/">MVP模式中的小技巧：软引用与弱引用</a></li><li><a href="/2018/01/28/oopsix/">设计模式的目标-面向对象的六大原则</a></li><li><a href="/2017/11/02/使用委托模式在Activity中操作RecyclerView中的item/">使用委托模式在Activity中操作RecyclerView中的item</a></li><li><a href="/2018/01/15/中介者模式/">中介者模式</a></li><li><a href="/2018/01/24/使用最频繁的粘合剂-适配器模式/">使用最频繁的粘合剂-适配器模式</a></li><li><a href="/2018/01/09/原型模式与保护性拷贝/">原型模式与保护性拷贝</a></li></ul>
+      	<h3> 相关文章：</h3><ul class="related-posts"><li><a href="/2018/01/08/反转部分单向链表/">反转部分单向链表</a></li><li><a href="/2018/01/27/twolianbiaotoone/">两个单链表生成相加链表</a></li><li><a href="/2018/01/02/两个单链表相交问题2/">两个单链表相交问题2：判断两个无环链表是否相交</a></li><li><a href="/2018/01/01/两个单链表相交问题1/">两个单链表相交问题1：判断链表是否有环</a></li><li><a href="/2018/01/03/两个单链表相交问题3/">两个单链表相交问题3：判断两个有环链表是否相交</a></li><li><a href="/2018/01/04/两个单链表相交问题总结/">两个单链表相交问题总结</a></li><li><a href="/2018/01/03/两个栈实现一个队列/">由两个栈实现一个队列</a></li><li><a href="/2018/01/03/删除链表中间节点/">删除链表的中间节点和a/b处的节点</a></li><li><a href="/2018/01/28/reverseKNodes/">将单链表的每K个节点之间逆序</a></li><li><a href="/2018/01/13/判断一个链表是否为回文结构/">判断一个链表是否为回文结构</a></li></ul>
       
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/17/命令模式/" rel="next" title="命令模式">
-                <i class="fa fa-chevron-left"></i> 命令模式
+              <a href="/2018/01/28/oopsix/" rel="next" title="设计模式的目标-面向对象的六大原则">
+                <i class="fa fa-chevron-left"></i> 设计模式的目标-面向对象的六大原则
               </a>
             
           </div>
@@ -480,10 +472,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/01/19/Builder模式/" rel="prev" title="Builder模式的简单示例">
-                Builder模式的简单示例 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -636,7 +624,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#定义状态接口以及相应的动作"><span class="nav-number">1.</span> <span class="nav-text">定义状态接口以及相应的动作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#定义每种不同的状态相应的动画"><span class="nav-number">2.</span> <span class="nav-text">定义每种不同的状态相应的动画</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#定义状态所对应的实体类，比如说这里的User类"><span class="nav-number">3.</span> <span class="nav-text">定义状态所对应的实体类，比如说这里的User类</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#实现代码如下："><span class="nav-number">4.</span> <span class="nav-text">实现代码如下：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#方法一：利用哈希表"><span class="nav-number">1.</span> <span class="nav-text">方法一：利用哈希表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法二：类似选择排序的过程"><span class="nav-number">2.</span> <span class="nav-text">方法二：类似选择排序的过程</span></a></li></ol></div>
             
 
           </div>
