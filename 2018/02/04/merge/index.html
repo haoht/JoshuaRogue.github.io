@@ -86,16 +86,17 @@
 
 
 
-<meta name="description" content="科班出身的野生程序猿">
-<meta property="og:type" content="website">
-<meta property="og:title" content="卖欠账包的王大麻">
-<meta property="og:url" content="http://gemus.site/archives/2018/page/6/index.html">
+<meta name="description" content="给定两个有序单链表的头节点head1和head2，合并两个有序链表，合并后的链表依然有序，并放回头节点  解法本题比较简单，但思路需要理顺的，具体如下：  如果两个链表中有一个为空，说明无须合并过程，返回另一个链表的头节点即可 比较head1和head2的值，小的节点也是链表合并后的第一个节点，记为head 设head节点所在的链表为链表1，另一个链表为链表2。链表1和链表2都从头部开始一起遍历">
+<meta property="og:type" content="article">
+<meta property="og:title" content="合并两个有序的单链表">
+<meta property="og:url" content="http://gemus.site/2018/02/04/merge/index.html">
 <meta property="og:site_name" content="卖欠账包的王大麻">
-<meta property="og:description" content="科班出身的野生程序猿">
+<meta property="og:description" content="给定两个有序单链表的头节点head1和head2，合并两个有序链表，合并后的链表依然有序，并放回头节点  解法本题比较简单，但思路需要理顺的，具体如下：  如果两个链表中有一个为空，说明无须合并过程，返回另一个链表的头节点即可 比较head1和head2的值，小的节点也是链表合并后的第一个节点，记为head 设head节点所在的链表为链表1，另一个链表为链表2。链表1和链表2都从头部开始一起遍历">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-02-04T10:39:33.254Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="卖欠账包的王大麻">
-<meta name="twitter:description" content="科班出身的野生程序猿">
+<meta name="twitter:title" content="合并两个有序的单链表">
+<meta name="twitter:description" content="给定两个有序单链表的头节点head1和head2，合并两个有序链表，合并后的链表依然有序，并放回头节点  解法本题比较简单，但思路需要理顺的，具体如下：  如果两个链表中有一个为空，说明无须合并过程，返回另一个链表的头节点即可 比较head1和head2的值，小的节点也是链表合并后的第一个节点，记为head 设head节点所在的链表为链表1，另一个链表为链表2。链表1和链表2都从头部开始一起遍历">
 
 
 
@@ -125,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://gemus.site/archives/2018/page/6/"/>
+  <link rel="canonical" href="http://gemus.site/2018/02/04/merge/"/>
 
 
 
 
 
-  <title>归档 | 卖欠账包的王大麻</title>
+  <title>合并两个有序的单链表 | 卖欠账包的王大麻</title>
   
 
 
@@ -150,7 +151,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     <a href="https://github.com/JoshuaRogue"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
 
@@ -289,151 +290,207 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://gemus.site/2018/02/04/merge/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wong Zhenyu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="卖欠账包的王大麻">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
-         
+          <h1 class="post-title" itemprop="name headline">合并两个有序的单链表</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-04T16:04:05+08:00">
+                2018-02-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        好! 目前共计 76 篇日志。 继续努力。
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
 
-        
+          
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/02/两个单链表相交问题2/" itemprop="url">
+          
+
+          
+            <div class="post-wordcount">
               
-                <span itemprop="name">两个单链表相交问题2：判断两个无环链表是否相交</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  433 字
+                </span>
               
-            </a>
-        
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-02T12:02:04+08:00"
-              content="2018-01-02" >
-          01-02
-        </time>
-      </div>
+              
+                <span class="post-meta-divider">|</span>
+              
 
-    </header>
-  </article>
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2 分钟
+                </span>
+              
+            </div>
+          
 
+          
 
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/02/用Github桌面版实现最简单的hexo部署到Github/" itemprop="url">
-              
-                <span itemprop="name">用Github桌面版实现最简单的hexo部署到Github.io</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-02T12:02:04+08:00"
-              content="2018-01-02" >
-          01-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/01/两个单链表相交问题1/" itemprop="url">
-              
-                <span itemprop="name">两个单链表相交问题1：判断链表是否有环</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-01T12:02:04+08:00"
-              content="2018-01-01" >
-          01-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <blockquote>
+<p>给定两个有序单链表的头节点head1和head2，合并两个有序链表，合并后的链表依然有序，并放回头节点</p>
+</blockquote>
+<h4 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h4><p>本题比较简单，但思路需要理顺的，具体如下：</p>
+<ol>
+<li>如果两个链表中有一个为空，说明无须合并过程，返回另一个链表的头节点即可</li>
+<li>比较head1和head2的值，小的节点也是链表合并后的第一个节点，记为head</li>
+<li>设head节点所在的链表为链表1，另一个链表为链表2。链表1和链表2都从头部开始一起遍历，比较每次遍历到的两个节点的值，记为cur1和cur2，然后根据大小关系做出不同的调整，同时用一个变量pre表示上次比较时值较小的节点。</li>
+<li>如果链表1先走完，此时cur1=null，pre为链表1的最后一个节点，那么就把pre的next指针指向链表2当前的节点，表示把链表2没遍历到的有序部分直接拼接到最后，调整结束。如果链表2先走完，说明链表2的所有节点都已经插入到链表1中，调整结束</li>
+<li>返回合并后链表的头节点head</li>
+</ol>
+<p>具体算法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">public Node merge(Node head1, Node head2) &#123;</span><br><span class="line">        if (head1 == null || head2 == null) &#123;</span><br><span class="line">            return head1 != null ? head1 : head2;</span><br><span class="line">        &#125;</span><br><span class="line">        Node head = head1.value &lt; head2.value ? head1 : head2;</span><br><span class="line">        Node cur1 = head == head1 ? head1 : head2;</span><br><span class="line">        Node cur2 = head == head1 ? head2 : head1;</span><br><span class="line">        Node pre = null;</span><br><span class="line">        Node next = null;</span><br><span class="line">        while (cur1 != null &amp;&amp; cur2 != null) &#123;</span><br><span class="line">            if (cur1.value &lt;= cur2.value) &#123;</span><br><span class="line">                pre = cur1;</span><br><span class="line">                cur1 = cur1.next;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                next = cur2.next;</span><br><span class="line">                pre.next = cur2;</span><br><span class="line">                cur2.next = cur1;</span><br><span class="line">                pre = cur2;</span><br><span class="line">                cur2 = next;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        pre.next = cur1 == null ? cur2 : cur1;</span><br><span class="line">        return head;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
       
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+      
+      	<h3> 相关文章：</h3><ul class="related-posts"><li><a href="/2018/01/04/两个单链表相交问题总结/">两个单链表相交问题总结</a></li><li><a href="/2018/01/31/convert/">将搜索二叉树转换成双向链表</a></li><li><a href="/2018/01/28/reverseKNodes/">将单链表的每K个节点之间逆序</a></li><li><a href="/2018/02/02/inawetNum/">在有序的环型单链表中插入新节点</a></li><li><a href="/2018/01/27/twolianbiaotoone/">两个单链表生成相加链表</a></li><li><a href="/2018/01/30/removeValue/">在单链表中删除指定值的节点</a></li><li><a href="/2018/01/03/两个单链表相交问题3/">两个单链表相交问题3：判断两个有环链表是否相交</a></li><li><a href="/2018/01/01/两个单链表相交问题1/">两个单链表相交问题1：判断链表是否有环</a></li><li><a href="/2018/01/02/两个单链表相交问题2/">两个单链表相交问题2：判断两个无环链表是否相交</a></li><li><a href="/2018/01/03/两个栈实现一个队列/">由两个栈实现一个队列</a></li></ul>
+      
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/02/inawetNum/" rel="next" title="在有序的环型单链表中插入新节点">
+                <i class="fa fa-chevron-left"></i> 在有序的环型单链表中插入新节点
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/2018/page/5/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/2018/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2018/page/5/">5</a><span class="page-number current">6</span>
-  </nav>
+  </article>
 
 
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -441,6 +498,15 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMzYxNS8xMDE3MA=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -461,8 +527,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -539,6 +614,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#解法"><span class="nav-number">1.</span> <span class="nav-text">解法</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -672,6 +763,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -700,6 +795,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
