@@ -86,19 +86,17 @@
 
 
 
-<meta name="description" content="组合模式也称为部分整体模式，它的作用是将一组相似的对象看作一个对象处理，然后提供同一的方法去访问相应对象，这样可以很容易地得到一个树形结构，操作系统中的文件就可以抽象成一个经典的组合模式，如下：  抽象根节点：抽象文件类1234567891011121314151617public abstract class Dir &amp;#123;    protected List&amp;lt;Dir&amp;gt; di">
+<meta name="description" content="这道题的题目有些复杂，是这样的：给定一个单链表的头部节点head，链表长度为N，如果N为偶数，那么前N/2个算作左半区，后N/2个节点算作右半区；如果N为奇数，那么前N/2个节点算作左半区，后N/2个节点算作右半区。左半区从左到右即为L1-&amp;gt;L2-&amp;gt;…，右半区从左到右记为R1-&amp;gt;R2-&amp;gt;…,将单链表调整为L1-&amp;gt;R1-&amp;gt;L2-&amp;gt;R2-&amp;gt;…的形式。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="策略模式：再见if-else">
-<meta property="og:url" content="http://gemus.site/2018/01/08/组合模式/index.html">
+<meta property="og:title" content="按照左右半区的方式重新组合单链表">
+<meta property="og:url" content="http://gemus.site/2018/02/06/relocate/index.html">
 <meta property="og:site_name" content="卖欠账包的王大麻">
-<meta property="og:description" content="组合模式也称为部分整体模式，它的作用是将一组相似的对象看作一个对象处理，然后提供同一的方法去访问相应对象，这样可以很容易地得到一个树形结构，操作系统中的文件就可以抽象成一个经典的组合模式，如下：  抽象根节点：抽象文件类1234567891011121314151617public abstract class Dir &amp;#123;    protected List&amp;lt;Dir&amp;gt; di">
+<meta property="og:description" content="这道题的题目有些复杂，是这样的：给定一个单链表的头部节点head，链表长度为N，如果N为偶数，那么前N/2个算作左半区，后N/2个节点算作右半区；如果N为奇数，那么前N/2个节点算作左半区，后N/2个节点算作右半区。左半区从左到右即为L1-&amp;gt;L2-&amp;gt;…，右半区从左到右记为R1-&amp;gt;R2-&amp;gt;…,将单链表调整为L1-&amp;gt;R1-&amp;gt;L2-&amp;gt;R2-&amp;gt;…的形式。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://i.loli.net/2018/01/21/5a63f4efaf63c.png">
-<meta property="og:updated_time" content="2018-01-26T07:47:16.144Z">
+<meta property="og:updated_time" content="2018-02-06T05:56:40.290Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="策略模式：再见if-else">
-<meta name="twitter:description" content="组合模式也称为部分整体模式，它的作用是将一组相似的对象看作一个对象处理，然后提供同一的方法去访问相应对象，这样可以很容易地得到一个树形结构，操作系统中的文件就可以抽象成一个经典的组合模式，如下：  抽象根节点：抽象文件类1234567891011121314151617public abstract class Dir &amp;#123;    protected List&amp;lt;Dir&amp;gt; di">
-<meta name="twitter:image" content="https://i.loli.net/2018/01/21/5a63f4efaf63c.png">
+<meta name="twitter:title" content="按照左右半区的方式重新组合单链表">
+<meta name="twitter:description" content="这道题的题目有些复杂，是这样的：给定一个单链表的头部节点head，链表长度为N，如果N为偶数，那么前N/2个算作左半区，后N/2个节点算作右半区；如果N为奇数，那么前N/2个节点算作左半区，后N/2个节点算作右半区。左半区从左到右即为L1-&amp;gt;L2-&amp;gt;…，右半区从左到右记为R1-&amp;gt;R2-&amp;gt;…,将单链表调整为L1-&amp;gt;R1-&amp;gt;L2-&amp;gt;R2-&amp;gt;…的形式。">
 
 
 
@@ -128,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://gemus.site/2018/01/08/组合模式/"/>
+  <link rel="canonical" href="http://gemus.site/2018/02/06/relocate/"/>
 
 
 
 
 
-  <title>策略模式：再见if-else | 卖欠账包的王大麻</title>
+  <title>按照左右半区的方式重新组合单链表 | 卖欠账包的王大麻</title>
   
 
 
@@ -306,7 +304,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://gemus.site/2018/01/08/组合模式/">
+    <link itemprop="mainEntityOfPage" href="http://gemus.site/2018/02/06/relocate/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wong Zhenyu">
@@ -323,7 +321,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">策略模式：再见if-else</h1>
+          <h1 class="post-title" itemprop="name headline">按照左右半区的方式重新组合单链表</h1>
         
 
         <div class="post-meta">
@@ -335,8 +333,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-08T10:02:04+08:00">
-                2018-01-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-06T10:36:32+08:00">
+                2018-02-06
               </time>
             
 
@@ -358,8 +356,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/设计模式/" itemprop="url" rel="index">
-                    <span itemprop="name">设计模式</span>
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
                   </a>
                 </span>
 
@@ -389,7 +387,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  500 字
+                  343 字
                 </span>
               
 
@@ -405,7 +403,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3 分钟
+                  2 分钟
                 </span>
               
             </div>
@@ -427,18 +425,16 @@
 
       
         <blockquote>
-<p>组合模式也称为部分整体模式，它的作用是将一组相似的对象看作一个对象处理，然后提供同一的方法去访问相应对象，这样可以很容易地得到一个树形结构，操作系统中的文件就可以抽象成一个经典的组合模式，如下：</p>
+<p>这道题的题目有些复杂，是这样的：给定一个单链表的头部节点head，链表长度为N，如果N为偶数，那么前N/2个算作左半区，后N/2个节点算作右半区；如果N为奇数，那么前N/2个节点算作左半区，后N/2个节点算作右半区。左半区从左到右即为L1-&gt;L2-&gt;…，右半区从左到右记为R1-&gt;R2-&gt;…,将单链表调整为L1-&gt;R1-&gt;L2-&gt;R2-&gt;…的形式。</p>
 </blockquote>
-<h4 id="抽象根节点：抽象文件类"><a href="#抽象根节点：抽象文件类" class="headerlink" title="抽象根节点：抽象文件类"></a>抽象根节点：抽象文件类</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">public abstract class Dir &#123;</span><br><span class="line">    protected List&lt;Dir&gt; dirs = new ArrayList&lt;&gt;();</span><br><span class="line">    private String name;</span><br><span class="line">    public Dir(String name) &#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public abstract void addDir(Dir dir);</span><br><span class="line">    public abstract void removeDir(Dir dir);</span><br><span class="line">    public abstract void clear();</span><br><span class="line">    public abstract void print();</span><br><span class="line">    public abstract List&lt;Dir&gt; getFiles();</span><br><span class="line"></span><br><span class="line">    public String getName() &#123;</span><br><span class="line">        return name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="具体枝干节点：文件夹类"><a href="#具体枝干节点：文件夹类" class="headerlink" title="具体枝干节点：文件夹类"></a>具体枝干节点：文件夹类</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">public class Folder extends Dir &#123;</span><br><span class="line">    public Folder(String name) &#123;</span><br><span class="line">        super(name);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void addDir(Dir dir) &#123;</span><br><span class="line">        dirs.add(dir);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void removeDir(Dir dir) &#123;</span><br><span class="line">        dirs.remove(dir);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void clear() &#123;</span><br><span class="line">        dirs.clear();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void print() &#123;</span><br><span class="line">        System.out.print(getName()+&quot;(&quot;);</span><br><span class="line">        Iterator&lt;Dir&gt; iterator = dirs.iterator();</span><br><span class="line">        while (iterator.hasNext()) &#123;</span><br><span class="line">            Dir dir = iterator.next();</span><br><span class="line">            dir.print();</span><br><span class="line">            if (iterator.hasNext()) &#123;</span><br><span class="line">                System.out.print(&quot;,&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.print(&quot;)&quot;);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public List&lt;Dir&gt; getFiles() &#123;</span><br><span class="line">        return dirs;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="具体叶子节点：文件类"><a href="#具体叶子节点：文件类" class="headerlink" title="具体叶子节点：文件类"></a>具体叶子节点：文件类</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">public class File extends Dir &#123;</span><br><span class="line">    public File(String name) &#123;</span><br><span class="line">        super(name);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void addDir(Dir dir) &#123;</span><br><span class="line">        throw new UnsupportedOperationException(&quot;文件对象不支持该操作&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void removeDir(Dir dir) &#123;</span><br><span class="line">        throw new UnsupportedOperationException(&quot;文件对象不支持该操作&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void clear() &#123;</span><br><span class="line">        throw new UnsupportedOperationException(&quot;文件对象不支持该操作&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void print() &#123;</span><br><span class="line">        System.out.print(getName());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public List&lt;Dir&gt; getFiles() &#123;</span><br><span class="line">        throw new UnsupportedOperationException(&quot;文件对象不支持该操作&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>具体使用如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public class Main &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Dir diskC = new Folder(&quot;C&quot;);</span><br><span class="line">        diskC.addDir(new File(&quot;test.txt&quot;));</span><br><span class="line">        Dir dirWin = new Folder(&quot;Windows&quot;);</span><br><span class="line">        dirWin.addDir(new File(&quot;explorer.exe&quot;));</span><br><span class="line">        diskC.addDir(dirWin);</span><br><span class="line">        diskC.print();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>结果</p>
-<p><img src="https://i.loli.net/2018/01/21/5a63f4efaf63c.png" alt="1.PNG"></p>
-<blockquote>
-<p>组合文件十分适合数据对象之间存在着递归关系的情景</p>
-</blockquote>
+<h4 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h4><p> 解题思路如下：</p>
+<ol>
+<li>如果链表为空或长度为1，不用调整，过程直接结束</li>
+<li>链表长度大于1时，遍历一遍找到左半区的最后一个节点，记为mid</li>
+<li>遍历一遍找到mid之后，将左半区与右半区分离成两个链表（mid.next=null),分别记为left(head)和right（原来的mid.next)</li>
+<li>将两个链表按照题目要求合并起来</li>
+</ol>
+<p>算法如下：<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">public void relocate(Node head) &#123;</span><br><span class="line">        if (head == null || head.next == null) &#123;</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">        Node mid = head;</span><br><span class="line">        Node right = head.next;</span><br><span class="line">        while (right.next != null &amp;&amp; right.next.next != null) &#123;</span><br><span class="line">            mid = mid.next;</span><br><span class="line">            right = right.next.next;</span><br><span class="line">        &#125;</span><br><span class="line">        right = mid.next;</span><br><span class="line">        mid.next = null;</span><br><span class="line">        merge(head, right);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void mergeLR(Node left, Node right) &#123;</span><br><span class="line">        Node next = null;</span><br><span class="line">        while (left.next != null) &#123;</span><br><span class="line">            next = right.next;</span><br><span class="line">            right.next = left.next;</span><br><span class="line">            left.next = right;</span><br><span class="line">            left = right.next;</span><br><span class="line">            right = next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -459,14 +455,14 @@
       
       
       
-      	<h3> 相关文章：</h3><ul class="related-posts"><li><a href="/2018/01/18/对象内部的改变-状态模式/">对象内部的策略改变-状态模式</a></li><li><a href="/2017/10/22/Dagger2实现MVP模式/">Dagger2实现MVP模式</a></li><li><a href="/2018/01/17/Java中内置的设计模式-观察者模式/">Java中内置的设计模式-观察者模式</a></li><li><a href="/2018/01/06/Intance单例模式/">单例模式的使用</a></li><li><a href="/2017/11/06/MVP模式中的小技巧：软引用与弱引用/">MVP模式中的小技巧：软引用与弱引用</a></li><li><a href="/2018/01/28/oopsix/">设计模式的目标-面向对象的六大原则</a></li><li><a href="/2017/11/02/使用委托模式在Activity中操作RecyclerView中的item/">使用委托模式在Activity中操作RecyclerView中的item</a></li><li><a href="/2018/01/15/中介者模式/">中介者模式</a></li><li><a href="/2018/01/24/使用最频繁的粘合剂-适配器模式/">使用最频繁的粘合剂-适配器模式</a></li><li><a href="/2018/01/20/外观模式/">同一编程接口-外观模式</a></li></ul>
+      	<h3> 相关文章：</h3><ul class="related-posts"><li><a href="/2018/01/03/两个栈实现一个队列/">由两个栈实现一个队列</a></li><li><a href="/2018/01/29/deletePoint/">删除无序单链表中重复出现的节点</a></li><li><a href="/2018/02/04/merge/">合并两个有序的单链表</a></li><li><a href="/2018/02/02/inawetNum/">在有序的环型单链表中插入新节点</a></li><li><a href="/2018/01/28/reverseKNodes/">将单链表的每K个节点之间逆序</a></li><li><a href="/2018/01/27/twolianbiaotoone/">两个单链表生成相加链表</a></li><li><a href="/2018/01/30/removeValue/">在单链表中删除指定值的节点</a></li><li><a href="/2018/01/01/两个单链表相交问题1/">两个单链表相交问题1：判断链表是否有环</a></li><li><a href="/2018/01/03/两个单链表相交问题3/">两个单链表相交问题3：判断两个有环链表是否相交</a></li><li><a href="/2018/01/02/两个单链表相交问题2/">两个单链表相交问题2：判断两个无环链表是否相交</a></li></ul>
       
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/07/hellogradle/" rel="next" title="gradle的安装和Hello World">
-                <i class="fa fa-chevron-left"></i> gradle的安装和Hello World
+              <a href="/2018/02/04/merge/" rel="next" title="合并两个有序的单链表">
+                <i class="fa fa-chevron-left"></i> 合并两个有序的单链表
               </a>
             
           </div>
@@ -474,10 +470,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/01/08/gradle构建脚本基础/" rel="prev" title="gradle中的Setting文件与Build文件">
-                gradle中的Setting文件与Build文件 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -630,7 +622,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#抽象根节点：抽象文件类"><span class="nav-number">1.</span> <span class="nav-text">抽象根节点：抽象文件类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#具体枝干节点：文件夹类"><span class="nav-number">2.</span> <span class="nav-text">具体枝干节点：文件夹类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#具体叶子节点：文件类"><span class="nav-number">3.</span> <span class="nav-text">具体叶子节点：文件类</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#解法"><span class="nav-number">1.</span> <span class="nav-text">解法</span></a></li></ol></div>
             
 
           </div>
