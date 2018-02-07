@@ -86,17 +86,17 @@
 
 
 
-<meta name="description" content="一直想学习一下Rxjava和Retrofit实现网络请求，正好这几天准备实现一个下载bing每日一图的功能，就实践了一下 网上找的带有每日一图链接的资源如下https://cn.bing.com/HPImageArchive.aspx?format=js&amp;amp;idx=0&amp;amp;n=1 打开之后会得到一长串JSON格式的数据1&amp;#123;&amp;quot;images&amp;quot;:[&amp;#123;&amp;">
+<meta name="description" content="题目：给定两个32位整数a和b，返回a和b中较大的数，不用任何比较判断  解法我们使用位运算来解决这个问题，具体思路如下：  a和b的符号不同，则有以下两种情况   a为0或正，那么b为负，返回a 如果a为负，则b为正或0，返回b   a和b的符号相同，a-b的值绝对不会溢出   如果a-b为0或正，返回a 如果a-b为负，返回b  具体算法如下： 12345678910111213141516">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Rxjava2和Retrofit2实现解析bing每日一图JSON">
-<meta property="og:url" content="http://gemus.site/2017/10/12/Rxjava2和Retrofit2实现解析bing每日一图JSON/index.html">
+<meta property="og:title" content="不用任何比较判断找出两个数中较大的数">
+<meta property="og:url" content="http://gemus.site/2018/02/07/getMax/index.html">
 <meta property="og:site_name" content="卖欠账包的王大麻">
-<meta property="og:description" content="一直想学习一下Rxjava和Retrofit实现网络请求，正好这几天准备实现一个下载bing每日一图的功能，就实践了一下 网上找的带有每日一图链接的资源如下https://cn.bing.com/HPImageArchive.aspx?format=js&amp;amp;idx=0&amp;amp;n=1 打开之后会得到一长串JSON格式的数据1&amp;#123;&amp;quot;images&amp;quot;:[&amp;#123;&amp;">
+<meta property="og:description" content="题目：给定两个32位整数a和b，返回a和b中较大的数，不用任何比较判断  解法我们使用位运算来解决这个问题，具体思路如下：  a和b的符号不同，则有以下两种情况   a为0或正，那么b为负，返回a 如果a为负，则b为正或0，返回b   a和b的符号相同，a-b的值绝对不会溢出   如果a-b为0或正，返回a 如果a-b为负，返回b  具体算法如下： 12345678910111213141516">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-06T06:21:09.720Z">
+<meta property="og:updated_time" content="2018-02-07T08:17:16.896Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Rxjava2和Retrofit2实现解析bing每日一图JSON">
-<meta name="twitter:description" content="一直想学习一下Rxjava和Retrofit实现网络请求，正好这几天准备实现一个下载bing每日一图的功能，就实践了一下 网上找的带有每日一图链接的资源如下https://cn.bing.com/HPImageArchive.aspx?format=js&amp;amp;idx=0&amp;amp;n=1 打开之后会得到一长串JSON格式的数据1&amp;#123;&amp;quot;images&amp;quot;:[&amp;#123;&amp;">
+<meta name="twitter:title" content="不用任何比较判断找出两个数中较大的数">
+<meta name="twitter:description" content="题目：给定两个32位整数a和b，返回a和b中较大的数，不用任何比较判断  解法我们使用位运算来解决这个问题，具体思路如下：  a和b的符号不同，则有以下两种情况   a为0或正，那么b为负，返回a 如果a为负，则b为正或0，返回b   a和b的符号相同，a-b的值绝对不会溢出   如果a-b为0或正，返回a 如果a-b为负，返回b  具体算法如下： 12345678910111213141516">
 
 
 
@@ -126,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://gemus.site/2017/10/12/Rxjava2和Retrofit2实现解析bing每日一图JSON/"/>
+  <link rel="canonical" href="http://gemus.site/2018/02/07/getMax/"/>
 
 
 
 
 
-  <title>Rxjava2和Retrofit2实现解析bing每日一图JSON | 卖欠账包的王大麻</title>
+  <title>不用任何比较判断找出两个数中较大的数 | 卖欠账包的王大麻</title>
   
 
 
@@ -304,7 +304,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://gemus.site/2017/10/12/Rxjava2和Retrofit2实现解析bing每日一图JSON/">
+    <link itemprop="mainEntityOfPage" href="http://gemus.site/2018/02/07/getMax/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wong Zhenyu">
@@ -321,7 +321,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Rxjava2和Retrofit2实现解析bing每日一图JSON</h1>
+          <h1 class="post-title" itemprop="name headline">不用任何比较判断找出两个数中较大的数</h1>
         
 
         <div class="post-meta">
@@ -333,8 +333,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-12T12:02:04+08:00">
-                2017-10-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-07T15:20:12+08:00">
+                2018-02-07
               </time>
             
 
@@ -356,8 +356,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android网络开发/" itemprop="url" rel="index">
-                    <span itemprop="name">Android网络开发</span>
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
                   </a>
                 </span>
 
@@ -387,7 +387,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,002 字
+                  265 字
                 </span>
               
 
@@ -403,7 +403,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4 分钟
+                  1 分钟
                 </span>
               
             </div>
@@ -425,22 +425,29 @@
 
       
         <blockquote>
-<p>一直想学习一下Rxjava和Retrofit实现网络请求，正好这几天准备实现一个下载bing每日一图的功能，就实践了一下</p>
-<h5 id="网上找的带有每日一图链接的资源如下"><a href="#网上找的带有每日一图链接的资源如下" class="headerlink" title="网上找的带有每日一图链接的资源如下"></a>网上找的带有每日一图链接的资源如下</h5><p><a href="https://cn.bing.com/HPImageArchive.aspx?format=js&amp;idx=0&amp;n=1" target="_blank" rel="noopener">https://cn.bing.com/HPImageArchive.aspx?format=js&amp;idx=0&amp;n=1</a></p>
-<h5 id="打开之后会得到一长串JSON格式的数据"><a href="#打开之后会得到一长串JSON格式的数据" class="headerlink" title="打开之后会得到一长串JSON格式的数据"></a>打开之后会得到一长串JSON格式的数据</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&quot;images&quot;:[&#123;&quot;startdate&quot;:&quot;20171006&quot;,&quot;fullstartdate&quot;:&quot;201710061600&quot;,&quot;enddate&quot;:&quot;20171007&quot;,&quot;url&quot;:&quot;/az/hprichbg/rb/VallesMarineris_ZH-CN10598461085_1920x1080.jpg&quot;,&quot;urlbase&quot;:&quot;/az/hprichbg/rb/VallesMarineris_ZH-CN10598461085&quot;,&quot;copyright&quot;:&quot;火星上的峡谷系统-水手号峡谷地区上的小行星 (© Detlev van Ravenswaay/Getty Images)&quot;,&quot;copyrightlink&quot;:&quot;http://www.bing.com/search?q=%E7%81%AB%E6%98%9F%E5%B3%A1%E8%B0%B7&amp;form=hpcapt&amp;mkt=zh-cn&quot;,&quot;quiz&quot;:&quot;/search?q=Bing+homepage+quiz&amp;filters=WQOskey:%22HPQuiz_20171006_VallesMarineris%22&amp;FORM=HPQUIZ&quot;,&quot;wp&quot;:true,&quot;hsh&quot;:&quot;5b69b96f1ea30eb5ec187173de25ef3c&quot;,&quot;drk&quot;:1,&quot;top&quot;:1,&quot;bot&quot;:1,&quot;hs&quot;:[]&#125;],&quot;tooltips&quot;:&#123;&quot;loading&quot;:&quot;正在加载...&quot;,&quot;previous&quot;:&quot;上一个图像&quot;,&quot;next&quot;:&quot;下一个图像&quot;,&quot;walle&quot;:&quot;此图片不能下载用作壁纸。&quot;,&quot;walls&quot;:&quot;下载今日美图。仅限用作桌面壁纸。&quot;&#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>题目：给定两个32位整数a和b，返回a和b中较大的数，不用任何比较判断</p>
 </blockquote>
-<h5 id="带有bing每日一图的链接显而易见了，就是"><a href="#带有bing每日一图的链接显而易见了，就是" class="headerlink" title="带有bing每日一图的链接显而易见了，就是"></a>带有bing每日一图的链接显而易见了，就是</h5><blockquote>
-<p>“urlbase”:”/az/hprichbg/rb/VallesMarineris_ZH-CN10598461085”</p>
-<p>#####当然 这仅仅是我写这篇文章时候的链接，每天数据都会不同</p>
-<h3 id="接下来我们来开始实现Rxjava2和Retrofit2解析JSON了，添加依赖如下"><a href="#接下来我们来开始实现Rxjava2和Retrofit2解析JSON了，添加依赖如下" class="headerlink" title="接下来我们来开始实现Rxjava2和Retrofit2解析JSON了，添加依赖如下"></a>接下来我们来开始实现Rxjava2和Retrofit2解析JSON了，添加依赖如下</h3><p> compile ‘com.squareup.retrofit2:retrofit:2.3.0’<br>    compile ‘io.reactivex.rxjava2:rxandroid:2.0.1’<br>    compile ‘io.reactivex.rxjava2:rxjava:2.1.3’<br>    compile ‘com.squareup.retrofit2:converter-gson:2.3.0’<br>    compile ‘com.squareup.retrofit2:adapter-rxjava2:2.3.0’</p>
-<h5 id="因为okhttp已经集成在retrofit中了，所有这里不需要再加入okhttp的依赖"><a href="#因为okhttp已经集成在retrofit中了，所有这里不需要再加入okhttp的依赖" class="headerlink" title="因为okhttp已经集成在retrofit中了，所有这里不需要再加入okhttp的依赖"></a>因为okhttp已经集成在retrofit中了，所有这里不需要再加入okhttp的依赖</h5><h4 id="一步一步来，首先，我们先根据返回的数据写一个实体类，这里有一个很方便的工具GsonFormat，可以直接根据网页中的信息生成gettter-setter及内部类，还没有安装此插件的同学可以参考这一篇博文"><a href="#一步一步来，首先，我们先根据返回的数据写一个实体类，这里有一个很方便的工具GsonFormat，可以直接根据网页中的信息生成gettter-setter及内部类，还没有安装此插件的同学可以参考这一篇博文" class="headerlink" title="一步一步来，首先，我们先根据返回的数据写一个实体类，这里有一个很方便的工具GsonFormat，可以直接根据网页中的信息生成gettter setter及内部类，还没有安装此插件的同学可以参考这一篇博文"></a>一步一步来，首先，我们先根据返回的数据写一个实体类，这里有一个很方便的工具GsonFormat，可以直接根据网页中的信息生成gettter setter及内部类，还没有安装此插件的同学可以参考这一篇博文</h4><p><a href="http://blog.csdn.net/dakaring/article/details/46300963" target="_blank" rel="noopener">http://blog.csdn.net/dakaring/article/details/46300963</a></p>
-<h5 id="我们也可以添加自己的函数，这样可以很方便地得到想要的数据，如下"><a href="#我们也可以添加自己的函数，这样可以很方便地得到想要的数据，如下" class="headerlink" title="我们也可以添加自己的函数，这样可以很方便地得到想要的数据，如下"></a>我们也可以添加自己的函数，这样可以很方便地得到想要的数据，如下</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String getURL() &#123;</span><br><span class="line">        return images.get(0).getUrl();</span><br><span class="line"> &#125;</span><br><span class="line">String getDate() &#123;</span><br><span class="line">        return images.get(0).getEnddate();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h5><p>我们使用位运算来解决这个问题，具体思路如下：</p>
+<ul>
+<li>a和b的符号不同，则有以下两种情况</li>
+</ul>
+<ol>
+<li>a为0或正，那么b为负，返回a</li>
+<li>如果a为负，则b为正或0，返回b</li>
+</ol>
+<ul>
+<li>a和b的符号相同，a-b的值绝对不会溢出</li>
+</ul>
+<ol>
+<li>如果a-b为0或正，返回a</li>
+<li>如果a-b为负，返回b</li>
+</ol>
+<p>具体算法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">public int flip(int n) &#123;</span><br><span class="line">        return n ^ 1;</span><br><span class="line">    &#125;</span><br><span class="line">    public int sign(int n) &#123;</span><br><span class="line">        return flip((n &gt;&gt; 31) &amp; 1);</span><br><span class="line">    &#125;</span><br><span class="line">    public int getMax2(int a, int b) &#123;</span><br><span class="line">        int c = a - b;</span><br><span class="line">        int sa = sign(a);</span><br><span class="line">        int sb = sign(b);</span><br><span class="line">        int sc = sign(c);</span><br><span class="line">        int difSab = sa ^ sb;</span><br><span class="line">        int sameSab = flip(difSab);</span><br><span class="line">        int returnA = difSab * sa + sameSab * sc;</span><br><span class="line">        int returnB = flip(returnA);</span><br><span class="line">        return a * returnA + b * returnB;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>其中函数sign的作用是返回整数n的符号，正数和0返回1，负数则返回0。flip函数的功能是如果n为1，返回0，如果n为0，返回1。</p>
 </blockquote>
-<h5 id="这里就是我自己添加的函数"><a href="#这里就是我自己添加的函数" class="headerlink" title="这里就是我自己添加的函数"></a>这里就是我自己添加的函数</h5><h4 id="完成实体类之后就可以来定义接口了"><a href="#完成实体类之后就可以来定义接口了" class="headerlink" title="完成实体类之后就可以来定义接口了"></a>完成实体类之后就可以来定义接口了</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">interface ImageAPI &#123;</span><br><span class="line">    /**</span><br><span class="line">     * 网络请求</span><br><span class="line">     * @return 实体类</span><br><span class="line">     */</span><br><span class="line">    @GET(&quot;HPImageArchive.aspx?format=js&amp;idx=0&amp;n=1&quot;)</span><br><span class="line">    Flowable&lt;ImageBean&gt; getImage();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="这里需要注意的是，在-GET后面添加的是上面的链接https-cn-bing-com-HPImageArchive-aspx-format-js-amp-idx-0-amp-n-1的后半部分，这也是retrofit-的用法很重要的一点，当然，在我们这里并没有体现出来这种方式的优点，但在其他地方，可以起到很好的解耦作用。我们这里定义的接口直接就返回了ImageBean类，在后面就可以直接提取数据了。Flowable则是Rxjava2新引入的东西，它可以更好地处理同步异步的关系。"><a href="#这里需要注意的是，在-GET后面添加的是上面的链接https-cn-bing-com-HPImageArchive-aspx-format-js-amp-idx-0-amp-n-1的后半部分，这也是retrofit-的用法很重要的一点，当然，在我们这里并没有体现出来这种方式的优点，但在其他地方，可以起到很好的解耦作用。我们这里定义的接口直接就返回了ImageBean类，在后面就可以直接提取数据了。Flowable则是Rxjava2新引入的东西，它可以更好地处理同步异步的关系。" class="headerlink" title="这里需要注意的是，在@GET后面添加的是上面的链接https://cn.bing.com/HPImageArchive.aspx?format=js&amp;idx=0&amp;n=1的后半部分，这也是retrofit 的用法很重要的一点，当然，在我们这里并没有体现出来这种方式的优点，但在其他地方，可以起到很好的解耦作用。我们这里定义的接口直接就返回了ImageBean类，在后面就可以直接提取数据了。Flowable则是Rxjava2新引入的东西，它可以更好地处理同步异步的关系。"></a>这里需要注意的是，在@GET后面添加的是上面的链接<a href="https://cn.bing.com/HPImageArchive.aspx?format=js&amp;idx=0&amp;n=1的后半部分，这也是retrofit" target="_blank" rel="noopener">https://cn.bing.com/HPImageArchive.aspx?format=js&amp;idx=0&amp;n=1的后半部分，这也是retrofit</a> 的用法很重要的一点，当然，在我们这里并没有体现出来这种方式的优点，但在其他地方，可以起到很好的解耦作用。我们这里定义的接口直接就返回了ImageBean类，在后面就可以直接提取数据了。Flowable则是Rxjava2新引入的东西，它可以更好地处理同步异步的关系。</h5><h4 id="最后一步就是实现了，我们在上一步只给出了链接的下半部分，在这里我们将将上半部分封装进retrofit，这样完整的链接就给出了"><a href="#最后一步就是实现了，我们在上一步只给出了链接的下半部分，在这里我们将将上半部分封装进retrofit，这样完整的链接就给出了" class="headerlink" title="最后一步就是实现了，我们在上一步只给出了链接的下半部分，在这里我们将将上半部分封装进retrofit，这样完整的链接就给出了"></a>最后一步就是实现了，我们在上一步只给出了链接的下半部分，在这里我们将将上半部分封装进retrofit，这样完整的链接就给出了</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">private static final String BASE_URL = &quot;https://cn.bing.com&quot;;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Retrofit retrofit = new Retrofit.Builder()</span><br><span class="line">                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())</span><br><span class="line">                .addConverterFactory(GsonConverterFactory.create())</span><br><span class="line">                .baseUrl(&quot;https://cn.bing.com/&quot;)</span><br><span class="line">                .build();</span><br></pre></td></tr></table></figure>
-<h5 id="在这里我们实现了Retrofit-的初始化，以及将JSON转化，其中addCallAdapterFactory-RxJava2CallAdapterFactory-create-表示添加Rxjava2与Retrofit2的适配器，addConverterFactory-GsonConverterFactory-create-则表示添加Json转化工具。"><a href="#在这里我们实现了Retrofit-的初始化，以及将JSON转化，其中addCallAdapterFactory-RxJava2CallAdapterFactory-create-表示添加Rxjava2与Retrofit2的适配器，addConverterFactory-GsonConverterFactory-create-则表示添加Json转化工具。" class="headerlink" title="在这里我们实现了Retrofit 的初始化，以及将JSON转化，其中addCallAdapterFactory(RxJava2CallAdapterFactory.create())表示添加Rxjava2与Retrofit2的适配器，addConverterFactory(GsonConverterFactory.create())则表示添加Json转化工具。"></a>在这里我们实现了Retrofit 的初始化，以及将JSON转化，其中addCallAdapterFactory(RxJava2CallAdapterFactory.create())表示添加Rxjava2与Retrofit2的适配器，addConverterFactory(GsonConverterFactory.create())则表示添加Json转化工具。</h5><h4 id="最后一步-实现接口"><a href="#最后一步-实现接口" class="headerlink" title="最后一步 实现接口"></a>最后一步 实现接口</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">final ImageAPI imageAPI = retrofit.create(ImageAPI.class);</span><br><span class="line">        LogUtil.v(TAG, &quot;downloadUrl&quot;);</span><br><span class="line">        imageAPI.getImage()</span><br><span class="line">                .subscribeOn(Schedulers.io())</span><br><span class="line">                .observeOn(Schedulers.newThread())</span><br><span class="line">                .subscribe(new Subscriber&lt;ImageBean&gt;() &#123;</span><br><span class="line">                    @Override</span><br><span class="line">                    public void onSubscribe(Subscription s) &#123;</span><br><span class="line">                        s.request(Long.MAX_VALUE);</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    @Override</span><br><span class="line">                    public void onNext(ImageBean imageBean) &#123;</span><br><span class="line">                        LogUtil.v(TAG, &quot;next&quot;);</span><br><span class="line">                        LogUtil.d(TAG, BASE_URL + imageBean.getURL());</span><br><span class="line">                        LogUtil.d(TAG, imageBean.getDate());</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    @Override</span><br><span class="line">                    public void onError(Throwable t) &#123;</span><br><span class="line">                        t.printStackTrace();</span><br><span class="line">                        LogUtil.v(TAG, &quot;error&quot;);</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    @Override</span><br><span class="line">                    public void onComplete() &#123;</span><br><span class="line">                        LogUtil.v(TAG, &quot;complete&quot;);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;);</span><br></pre></td></tr></table></figure>
-<h5 id="这里需要注意onSubscribe函数中必须对s进行处理，这里表示一次性处理几次数据，若不处理，则onNext不生效！"><a href="#这里需要注意onSubscribe函数中必须对s进行处理，这里表示一次性处理几次数据，若不处理，则onNext不生效！" class="headerlink" title="这里需要注意onSubscribe函数中必须对s进行处理，这里表示一次性处理几次数据，若不处理，则onNext不生效！"></a>这里需要注意onSubscribe函数中必须对s进行处理，这里表示一次性处理几次数据，若不处理，则onNext不生效！</h5><h4 id="到这里就结束了，可以得到完整的每日一图链接，如有差错恳请指出！"><a href="#到这里就结束了，可以得到完整的每日一图链接，如有差错恳请指出！" class="headerlink" title="到这里就结束了，可以得到完整的每日一图链接，如有差错恳请指出！"></a>到这里就结束了，可以得到完整的每日一图链接，如有差错恳请指出！</h4>
+
       
     </div>
     
@@ -460,14 +467,14 @@
       
       
       
-      	<h3> 相关文章：</h3><ul class="related-posts"><li><a href="/2018/02/06/Java中的网络通信/">Java中的网络通信</a></li></ul>
+      	<h3> 相关文章：</h3><ul class="related-posts"><li><a href="/2018/01/03/两个栈实现一个队列/">由两个栈实现一个队列</a></li><li><a href="/2018/01/31/convert/">将搜索二叉树转换成双向链表</a></li><li><a href="/2018/02/02/inawetNum/">在有序的环型单链表中插入新节点</a></li><li><a href="/2018/02/04/merge/">合并两个有序的单链表</a></li><li><a href="/2018/01/27/twolianbiaotoone/">两个单链表生成相加链表</a></li><li><a href="/2018/01/28/reverseKNodes/">将单链表的每K个节点之间逆序</a></li><li><a href="/2018/02/06/relocate/">按照左右半区的方式重新组合单链表</a></li><li><a href="/2018/01/30/removeValue/">在单链表中删除指定值的节点</a></li><li><a href="/2018/01/02/两个单链表相交问题2/">两个单链表相交问题2：判断两个无环链表是否相交</a></li><li><a href="/2018/01/03/两个单链表相交问题3/">两个单链表相交问题3：判断两个有环链表是否相交</a></li></ul>
       
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/08/ButterKnife在RecyclerView adapter中的使用/" rel="next" title="ButterKnife在RecyclerView adapter中的使用">
-                <i class="fa fa-chevron-left"></i> ButterKnife在RecyclerView adapter中的使用
+              <a href="/2018/02/06/Java中的网络通信/" rel="next" title="Java中的网络通信">
+                <i class="fa fa-chevron-left"></i> Java中的网络通信
               </a>
             
           </div>
@@ -475,10 +482,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/10/13/DialogFragment实现自定义布局的小技巧/" rel="prev" title="DialogFragment实现自定义布局的小技巧">
-                DialogFragment实现自定义布局的小技巧 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -631,7 +634,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#网上找的带有每日一图链接的资源如下"><span class="nav-number">1.</span> <span class="nav-text">网上找的带有每日一图链接的资源如下</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#打开之后会得到一长串JSON格式的数据"><span class="nav-number">2.</span> <span class="nav-text">打开之后会得到一长串JSON格式的数据</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#带有bing每日一图的链接显而易见了，就是"><span class="nav-number">3.</span> <span class="nav-text">带有bing每日一图的链接显而易见了，就是</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接下来我们来开始实现Rxjava2和Retrofit2解析JSON了，添加依赖如下"><span class="nav-number"></span> <span class="nav-text">接下来我们来开始实现Rxjava2和Retrofit2解析JSON了，添加依赖如下</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#因为okhttp已经集成在retrofit中了，所有这里不需要再加入okhttp的依赖"><span class="nav-number">1.</span> <span class="nav-text">因为okhttp已经集成在retrofit中了，所有这里不需要再加入okhttp的依赖</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一步一步来，首先，我们先根据返回的数据写一个实体类，这里有一个很方便的工具GsonFormat，可以直接根据网页中的信息生成gettter-setter及内部类，还没有安装此插件的同学可以参考这一篇博文"><span class="nav-number"></span> <span class="nav-text">一步一步来，首先，我们先根据返回的数据写一个实体类，这里有一个很方便的工具GsonFormat，可以直接根据网页中的信息生成gettter setter及内部类，还没有安装此插件的同学可以参考这一篇博文</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#我们也可以添加自己的函数，这样可以很方便地得到想要的数据，如下"><span class="nav-number">1.</span> <span class="nav-text">我们也可以添加自己的函数，这样可以很方便地得到想要的数据，如下</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#这里就是我自己添加的函数"><span class="nav-number">2.</span> <span class="nav-text">这里就是我自己添加的函数</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#完成实体类之后就可以来定义接口了"><span class="nav-number"></span> <span class="nav-text">完成实体类之后就可以来定义接口了</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#这里需要注意的是，在-GET后面添加的是上面的链接https-cn-bing-com-HPImageArchive-aspx-format-js-amp-idx-0-amp-n-1的后半部分，这也是retrofit-的用法很重要的一点，当然，在我们这里并没有体现出来这种方式的优点，但在其他地方，可以起到很好的解耦作用。我们这里定义的接口直接就返回了ImageBean类，在后面就可以直接提取数据了。Flowable则是Rxjava2新引入的东西，它可以更好地处理同步异步的关系。"><span class="nav-number">1.</span> <span class="nav-text">这里需要注意的是，在@GET后面添加的是上面的链接https://cn.bing.com/HPImageArchive.aspx?format=js&amp;idx=0&amp;n=1的后半部分，这也是retrofit 的用法很重要的一点，当然，在我们这里并没有体现出来这种方式的优点，但在其他地方，可以起到很好的解耦作用。我们这里定义的接口直接就返回了ImageBean类，在后面就可以直接提取数据了。Flowable则是Rxjava2新引入的东西，它可以更好地处理同步异步的关系。</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#最后一步就是实现了，我们在上一步只给出了链接的下半部分，在这里我们将将上半部分封装进retrofit，这样完整的链接就给出了"><span class="nav-number"></span> <span class="nav-text">最后一步就是实现了，我们在上一步只给出了链接的下半部分，在这里我们将将上半部分封装进retrofit，这样完整的链接就给出了</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#在这里我们实现了Retrofit-的初始化，以及将JSON转化，其中addCallAdapterFactory-RxJava2CallAdapterFactory-create-表示添加Rxjava2与Retrofit2的适配器，addConverterFactory-GsonConverterFactory-create-则表示添加Json转化工具。"><span class="nav-number">1.</span> <span class="nav-text">在这里我们实现了Retrofit 的初始化，以及将JSON转化，其中addCallAdapterFactory(RxJava2CallAdapterFactory.create())表示添加Rxjava2与Retrofit2的适配器，addConverterFactory(GsonConverterFactory.create())则表示添加Json转化工具。</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#最后一步-实现接口"><span class="nav-number"></span> <span class="nav-text">最后一步 实现接口</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#这里需要注意onSubscribe函数中必须对s进行处理，这里表示一次性处理几次数据，若不处理，则onNext不生效！"><span class="nav-number">1.</span> <span class="nav-text">这里需要注意onSubscribe函数中必须对s进行处理，这里表示一次性处理几次数据，若不处理，则onNext不生效！</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#到这里就结束了，可以得到完整的每日一图链接，如有差错恳请指出！"><span class="nav-number"></span> <span class="nav-text">到这里就结束了，可以得到完整的每日一图链接，如有差错恳请指出！</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#解法"><span class="nav-number">1.</span> <span class="nav-text">解法</span></a></li></ol></div>
             
 
           </div>
