@@ -86,16 +86,17 @@
 
 
 
-<meta name="description" content="科班出身的野生程序猿">
-<meta property="og:type" content="website">
-<meta property="og:title" content="卖欠账包的王大麻">
-<meta property="og:url" content="http://gemus.site/archives/page/3/index.html">
+<meta name="description" content="在Android中的网络编程中，我们需要了解基本的网络分层和最主要的几个协议  网络分层在我所学的《计算机网络》课本中，将网络分为物理层、数据链路层、网络层、传输层与应用层，这是一个自底而上的顺序，叫做五层协议体系模型；而在OSI七层体系模型中，则把应用层又分为了会话层、表示层与应用层，具体为：  物理层、数据链路层、网络层、传输层、会话层、表示层、应用层  TCP协议是属于传输层的协议，而HT">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络分层及TCP、HTTP协议">
+<meta property="og:url" content="http://gemus.site/2018/02/08/networkframeworkAndTCP/index.html">
 <meta property="og:site_name" content="卖欠账包的王大麻">
-<meta property="og:description" content="科班出身的野生程序猿">
+<meta property="og:description" content="在Android中的网络编程中，我们需要了解基本的网络分层和最主要的几个协议  网络分层在我所学的《计算机网络》课本中，将网络分为物理层、数据链路层、网络层、传输层与应用层，这是一个自底而上的顺序，叫做五层协议体系模型；而在OSI七层体系模型中，则把应用层又分为了会话层、表示层与应用层，具体为：  物理层、数据链路层、网络层、传输层、会话层、表示层、应用层  TCP协议是属于传输层的协议，而HT">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-02-08T08:29:53.324Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="卖欠账包的王大麻">
-<meta name="twitter:description" content="科班出身的野生程序猿">
+<meta name="twitter:title" content="网络分层及TCP、HTTP协议">
+<meta name="twitter:description" content="在Android中的网络编程中，我们需要了解基本的网络分层和最主要的几个协议  网络分层在我所学的《计算机网络》课本中，将网络分为物理层、数据链路层、网络层、传输层与应用层，这是一个自底而上的顺序，叫做五层协议体系模型；而在OSI七层体系模型中，则把应用层又分为了会话层、表示层与应用层，具体为：  物理层、数据链路层、网络层、传输层、会话层、表示层、应用层  TCP协议是属于传输层的协议，而HT">
 
 
 
@@ -125,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://gemus.site/archives/page/3/"/>
+  <link rel="canonical" href="http://gemus.site/2018/02/08/networkframeworkAndTCP/"/>
 
 
 
 
 
-  <title>归档 | 卖欠账包的王大麻</title>
+  <title>网络分层及TCP、HTTP协议 | 卖欠账包的王大麻</title>
   
 
 
@@ -150,7 +151,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     <a href="https://github.com/JoshuaRogue"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
 
@@ -289,410 +290,235 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://gemus.site/2018/02/08/networkframeworkAndTCP/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wong Zhenyu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="卖欠账包的王大麻">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
-         
+          <h1 class="post-title" itemprop="name headline">网络分层及TCP、HTTP协议</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-08T14:43:14+08:00">
+                2018-02-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        很好! 目前共计 81 篇日志。 继续努力。
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android网络开发/" itemprop="url" rel="index">
+                    <span itemprop="name">Android网络开发</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
 
-        
+          
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/23/约瑟夫坏问题/" itemprop="url">
+          
+
+          
+            <div class="post-wordcount">
               
-                <span itemprop="name">约瑟夫环问题</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  836 字
+                </span>
               
-            </a>
-        
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-23T12:02:04+08:00"
-              content="2018-01-23" >
-          01-23
-        </time>
-      </div>
+              
+                <span class="post-meta-divider">|</span>
+              
 
-    </header>
-  </article>
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3 分钟
+                </span>
+              
+            </div>
+          
 
+          
 
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/22/设计模式中的撤销-备忘录模式/" itemprop="url">
-              
-                <span itemprop="name">设计模式中的撤销-备忘录模式</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-22T12:02:04+08:00"
-              content="2018-01-22" >
-          01-22
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/20/特殊的继承关系-装饰模式/" itemprop="url">
-              
-                <span itemprop="name">特殊的继承关系-装饰模式</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-20T13:02:04+08:00"
-              content="2018-01-20" >
-          01-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <blockquote>
+<p>在Android中的网络编程中，我们需要了解基本的网络分层和最主要的几个协议</p>
+</blockquote>
+<h3 id="网络分层"><a href="#网络分层" class="headerlink" title="网络分层"></a>网络分层</h3><p>在我所学的《计算机网络》课本中，将网络分为物理层、数据链路层、网络层、传输层与应用层，这是一个自底而上的顺序，叫做五层协议体系模型；而在OSI七层体系模型中，则把应用层又分为了会话层、表示层与应用层，具体为：</p>
+<blockquote>
+<p>物理层、数据链路层、网络层、传输层、会话层、表示层、应用层</p>
+</blockquote>
+<p>TCP协议是属于传输层的协议，而HTTP协议在两个分层中都是属于应用层协议</p>
+<h3 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h3><h4 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h4><p>我们进行HTTP连接网络时会进行TCP的三次握手，然后传输数据，之后再释放连接，过程如下：</p>
+<ol>
+<li>第一次握手：客户端向服务端发送SYN请求报文段，进入SYN_SENT状态</li>
+<li>第二次握手：服务器收到客户端发来的SYN请求报文段，发送SYN+ACK报文段，进入SYN_REVD状态</li>
+<li>第三次握手：客户端收到服务端的SYN+ACK报文段，向服务器发送ACK报文段，发送完毕后，客户端和服务器都进入ESTABLISHED状态</li>
+</ol>
+<h4 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h4><p>建立连接后，当数据传送完毕，断开连接我们就需要进行四次挥手：</p>
+<ol>
+<li>第一次挥手：客户端向服务端发送FIN报文段，进入FIN_WAIT_1状态，此时客户端已经没有数据需要发送给服务端了</li>
+<li>第二次挥手：服务端收到了客户端发送的FIN报文段，向客户端发送ACK报文段</li>
+<li>第三次挥手：服务端发送FIN报文段，进入LAST_ACK状态</li>
+<li>第四次挥手：客户端收到服务端发送的FIN报文段，向服务端发送ACK报文段，服务端收到ACK报文后就关闭连接。客户端在等待最大报文生存时间后没有收到回复，客户端也关闭连接</li>
+</ol>
+<h3 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h3><p>HTTP是应用层的协议，它假定在下层的协议是可靠的，所以我们一般使用TCP/IP协议作为它的下层协议来使用</p>
+<p>HTTP请求方法又8种，分别为：</p>
+<ul>
+<li>GET：请求获取Request-URI所标识的资源</li>
+<li>POST：在Request-URI所标识的资源后附加新的数据</li>
+<li>HEAD：请求获取由Request-URI所标识的资源的相应消息报头</li>
+<li>PUT：请求服务器存储一个资源，并用Request-URI作为其标识</li>
+<li>DELETE：请求服务器删除Request-URI所标识的资源</li>
+<li>TRACE：请求服务器回送收到的请求消息，用于测试或诊断</li>
+<li>CONNECT：在1.1版本中将连接改为管道方式的代理服务器</li>
+<li>OPTIONS：请求查询服务器的性能，或者查询与资源相关的选项和需求</li>
+</ul>
+<p>HTTP响应状态码：</p>
+<ul>
+<li>1XX：指示信息，收到请求，需要请求者继续执行操作</li>
+<li>2XX：请求成功，请求已成功被处理</li>
+<li>3XX：重定向，要完成请求必须进行更进一步的操作</li>
+<li>4XX：客户端错误，请求有语法错误或无法实现</li>
+<li>5XX：服务器错误，服务器不能实现合法的请求</li>
+</ul>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/20/外观模式/" itemprop="url">
-              
-                <span itemprop="name">同一编程接口-外观模式</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-20T12:02:04+08:00"
-              content="2018-01-20" >
-          01-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/20/解释器模式/" itemprop="url">
-              
-                <span itemprop="name">解释器模式</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-20T11:02:04+08:00"
-              content="2018-01-20" >
-          01-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/19/Builder模式/" itemprop="url">
-              
-                <span itemprop="name">Builder模式的简单示例</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-19T12:02:04+08:00"
-              content="2018-01-19" >
-          01-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/18/对象内部的改变-状态模式/" itemprop="url">
-              
-                <span itemprop="name">对象内部的策略改变-状态模式</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-18T12:02:04+08:00"
-              content="2018-01-18" >
-          01-18
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/17/容器中的游标-迭代器模式/" itemprop="url">
-              
-                <span itemprop="name">容器中的游标-迭代器模式</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-17T12:02:04+08:00"
-              content="2018-01-17" >
-          01-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/17/Java中内置的设计模式-观察者模式/" itemprop="url">
-              
-                <span itemprop="name">Java中内置的设计模式-观察者模式</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-17T12:02:04+08:00"
-              content="2018-01-17" >
-          01-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/17/命令模式/" itemprop="url">
-              
-                <span itemprop="name">命令模式</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-17T12:02:04+08:00"
-              content="2018-01-17" >
-          01-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+      
+      	<h3> 相关文章：</h3><ul class="related-posts"><li><a href="/2018/02/06/Java中的网络通信/">Java中的网络通信</a></li><li><a href="/2017/10/12/Rxjava2和Retrofit2实现解析bing每日一图JSON/">Rxjava2和Retrofit2实现解析bing每日一图JSON</a></li></ul>
+      
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/08/getMinStack/" rel="next" title="设计一个有getMin功能的栈">
+                <i class="fa fa-chevron-left"></i> 设计一个有getMin功能的栈
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/9/">9</a><a class="extend next" rel="next" href="/archives/page/4/"><i class="fa fa-angle-right"></i></a>
-  </nav>
+  </article>
 
 
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -700,6 +526,15 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMzYxNS8xMDE3MA=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -720,8 +555,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -798,6 +642,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#网络分层"><span class="nav-number">1.</span> <span class="nav-text">网络分层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP"><span class="nav-number">2.</span> <span class="nav-text">TCP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#三次握手"><span class="nav-number">2.1.</span> <span class="nav-text">三次握手</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四次挥手"><span class="nav-number">2.2.</span> <span class="nav-text">四次挥手</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP"><span class="nav-number">3.</span> <span class="nav-text">HTTP</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -931,6 +791,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -959,6 +823,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
