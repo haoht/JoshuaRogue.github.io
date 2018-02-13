@@ -93,7 +93,7 @@
 <meta property="og:site_name" content="卖欠账包的王大麻">
 <meta property="og:description" content="常见的Map实现类   Map类 特性     HashTable Map基于散列表的实现，HashTable继承自抽象类Dictionary（Dictionary是一个被废弃的接口），是线程安全的。   HashMap Map基于散列表的实现（取代了HashTable）。继承自抽象类AbstractMap，插入和查询“键对值”的开销是固定的。   LinkedHashMap 类似于HashMap">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-13T07:04:29.353Z">
+<meta property="og:updated_time" content="2018-02-13T07:13:08.389Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Map的方方面面">
 <meta name="twitter:description" content="常见的Map实现类   Map类 特性     HashTable Map基于散列表的实现，HashTable继承自抽象类Dictionary（Dictionary是一个被废弃的接口），是线程安全的。   HashMap Map基于散列表的实现（取代了HashTable）。继承自抽象类AbstractMap，插入和查询“键对值”的开销是固定的。   LinkedHashMap 类似于HashMap">
@@ -387,7 +387,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  656 字
+                  657 字
                 </span>
               
 
@@ -493,7 +493,7 @@
 <p>HashTable是使用synchronized关键字来实现线程互斥来达到线程同步的目的的</p>
 </blockquote>
 <h4 id="HashMap的实现"><a href="#HashMap的实现" class="headerlink" title="HashMap的实现"></a>HashMap的实现</h4><p>HashMap内部维护着一个散列表，当我们使用put函数的时候，会调用Hash方法对Key做Hash（即通过hashCode()的高16位异或低16位）得到bucket位置，然后再进行储存，HashMap会根据当前bucket的占用情况自动调整容量。使用get函数获取对象时，与put方法一样，先对Key做hash，得到Bucket的位置，再通过equals()方法来确定键对值。<br>当发生Hash冲突时，在JDK8之前，会使用一个链表将同一Bucket的元素组织起来，使用get方法时再进行遍历；在JDK8中，将链表改为了TreeMap，提高了查询效率。</p>
-<h4 id="更高效的线程同步Map"><a href="#更高效的线程同步Map" class="headerlink" title="更高效的线程同步Map-"></a>更高效的线程同步Map-</h4><p>ConcurrentHashMap采用了分段锁的设计，只有在同一个分段内才存在竞态关系，不同的分段锁之间没有锁竞争。这个容器的实现是基于Java内存模型的。</p>
+<h4 id="更高效的线程同步Map-ConcurrentHashMap"><a href="#更高效的线程同步Map-ConcurrentHashMap" class="headerlink" title="更高效的线程同步Map-ConcurrentHashMap"></a>更高效的线程同步Map-ConcurrentHashMap</h4><p>ConcurrentHashMap采用了分段锁的设计，只有在同一个分段内才存在竞态关系，不同的分段锁之间没有锁竞争。这个容器的实现是基于Java内存模型的。</p>
 
       
     </div>
@@ -681,7 +681,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#常见的Map实现类"><span class="nav-number">1.</span> <span class="nav-text">常见的Map实现类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HashMap与HashTable的比较"><span class="nav-number">2.</span> <span class="nav-text">HashMap与HashTable的比较</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HashMap的实现"><span class="nav-number">3.</span> <span class="nav-text">HashMap的实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更高效的线程同步Map"><span class="nav-number">4.</span> <span class="nav-text">更高效的线程同步Map-</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#常见的Map实现类"><span class="nav-number">1.</span> <span class="nav-text">常见的Map实现类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HashMap与HashTable的比较"><span class="nav-number">2.</span> <span class="nav-text">HashMap与HashTable的比较</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HashMap的实现"><span class="nav-number">3.</span> <span class="nav-text">HashMap的实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更高效的线程同步Map-ConcurrentHashMap"><span class="nav-number">4.</span> <span class="nav-text">更高效的线程同步Map-ConcurrentHashMap</span></a></li></ol></div>
             
 
           </div>
