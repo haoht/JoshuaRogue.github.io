@@ -93,7 +93,7 @@
 <meta property="og:site_name" content="卖欠账包的王大麻">
 <meta property="og:description" content="在Android中的网络编程中，我们需要了解基本的网络分层和最主要的几个协议  网络分层在我所学的《计算机网络》课本中，将网络分为物理层、数据链路层、网络层、传输层与应用层，这是一个自底而上的顺序，叫做五层协议体系模型；而在OSI七层体系模型中，则把应用层又分为了会话层、表示层与应用层，具体为：  物理层、数据链路层、网络层、传输层、会话层、表示层、应用层  TCP协议是属于传输层的协议，而HT">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-08T08:29:53.324Z">
+<meta property="og:updated_time" content="2018-02-13T12:42:25.024Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="网络分层及TCP、HTTP协议">
 <meta name="twitter:description" content="在Android中的网络编程中，我们需要了解基本的网络分层和最主要的几个协议  网络分层在我所学的《计算机网络》课本中，将网络分为物理层、数据链路层、网络层、传输层与应用层，这是一个自底而上的顺序，叫做五层协议体系模型；而在OSI七层体系模型中，则把应用层又分为了会话层、表示层与应用层，具体为：  物理层、数据链路层、网络层、传输层、会话层、表示层、应用层  TCP协议是属于传输层的协议，而HT">
@@ -387,7 +387,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  836 字
+                  1,324 字
                 </span>
               
 
@@ -403,7 +403,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3 分钟
+                  5 分钟
                 </span>
               
             </div>
@@ -446,8 +446,7 @@
 <li>第四次挥手：客户端收到服务端发送的FIN报文段，向服务端发送ACK报文段，服务端收到ACK报文后就关闭连接。客户端在等待最大报文生存时间后没有收到回复，客户端也关闭连接</li>
 </ol>
 <h3 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h3><p>HTTP是应用层的协议，它假定在下层的协议是可靠的，所以我们一般使用TCP/IP协议作为它的下层协议来使用</p>
-<p>HTTP请求方法又8种，分别为：</p>
-<ul>
+<h4 id="HTTP请求方法"><a href="#HTTP请求方法" class="headerlink" title="HTTP请求方法"></a>HTTP请求方法</h4><ul>
 <li>GET：请求获取Request-URI所标识的资源</li>
 <li>POST：在Request-URI所标识的资源后附加新的数据</li>
 <li>HEAD：请求获取由Request-URI所标识的资源的相应消息报头</li>
@@ -457,14 +456,52 @@
 <li>CONNECT：在1.1版本中将连接改为管道方式的代理服务器</li>
 <li>OPTIONS：请求查询服务器的性能，或者查询与资源相关的选项和需求</li>
 </ul>
-<p>HTTP响应状态码：</p>
-<ul>
+<h4 id="HTTP响应状态码："><a href="#HTTP响应状态码：" class="headerlink" title="HTTP响应状态码："></a>HTTP响应状态码：</h4><ul>
 <li>1XX：指示信息，收到请求，需要请求者继续执行操作</li>
 <li>2XX：请求成功，请求已成功被处理</li>
 <li>3XX：重定向，要完成请求必须进行更进一步的操作</li>
 <li>4XX：客户端错误，请求有语法错误或无法实现</li>
 <li>5XX：服务器错误，服务器不能实现合法的请求</li>
 </ul>
+<h4 id="HTTP消息报头"><a href="#HTTP消息报头" class="headerlink" title="HTTP消息报头"></a>HTTP消息报头</h4><p>HTTP消息报头又分为通用报头、请求报头、响应报头、实体报头等</p>
+<h5 id="通用报头"><a href="#通用报头" class="headerlink" title="通用报头"></a>通用报头</h5><blockquote>
+<p>通用报头既可以出现在请求报头，也可以出现在响应报头中</p>
+<ul>
+<li>Date：表示消息产生的日期和时间</li>
+<li>Connection：允许发送指定连接的选项。</li>
+<li>Cache-Control：用于指定缓存指令</li>
+</ul>
+</blockquote>
+<h5 id="请求报头"><a href="#请求报头" class="headerlink" title="请求报头"></a>请求报头</h5><blockquote>
+<p>请求报头通知服务器关于客户端请求的信息</p>
+<ul>
+<li>Host：请求的主机名，允许多个域名同处一个ip地址，即虚拟主机</li>
+<li>User-Agent：发送请求的浏览器类型、操作系统等信息</li>
+<li>Accept：客户端可识别的内容类型列表，用户指定客户端接收哪些类型的信息</li>
+<li>Accept-Encoding：客户端可识别的数据编码</li>
+<li>Accept-Language：表示浏览器支持的语言类型</li>
+<li>Connection：允许客户端和服务器于指定与请求/响应连接有关的选项</li>
+<li>Transfer-Encoding：告知接收端为了保证报文的可靠传输，对报文采用了什么编码方式</li>
+</ul>
+</blockquote>
+<h5 id="响应报头"><a href="#响应报头" class="headerlink" title="响应报头"></a>响应报头</h5><blockquote>
+<p>用于服务器传递自身信息的响应</p>
+<ul>
+<li>Location：用于重定向接收者到一个新的位置，常用在更换域名的时候</li>
+<li>Server：包含服务器用来处理请求的系统信息，与User-Agent请求报头是向对应的</li>
+</ul>
+</blockquote>
+<h5 id="实体报头"><a href="#实体报头" class="headerlink" title="实体报头"></a>实体报头</h5><blockquote>
+<p>实体报头用来定义被传送资源的信息，其既可以用于请求也可以用于响应，请求和响应消息都可以传送一个实体</p>
+<ul>
+<li>Content-Type：发送给接收者的实体正文的媒体类型</li>
+<li>Content-Length：实体正文的长度</li>
+<li>Content-Language：描述资源所用的自然语言</li>
+<li>Content-Encoding：实体报头被用作媒体类型的修饰符</li>
+<li>Last-Modified：实体报头用于只是资源的最后修改日期和时间</li>
+<li>Expires：实体报头给出响应过期的日期和时间</li>
+</ul>
+</blockquote>
 
       
     </div>
@@ -656,7 +693,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#网络分层"><span class="nav-number">1.</span> <span class="nav-text">网络分层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP"><span class="nav-number">2.</span> <span class="nav-text">TCP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#三次握手"><span class="nav-number">2.1.</span> <span class="nav-text">三次握手</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四次挥手"><span class="nav-number">2.2.</span> <span class="nav-text">四次挥手</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP"><span class="nav-number">3.</span> <span class="nav-text">HTTP</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#网络分层"><span class="nav-number">1.</span> <span class="nav-text">网络分层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP"><span class="nav-number">2.</span> <span class="nav-text">TCP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#三次握手"><span class="nav-number">2.1.</span> <span class="nav-text">三次握手</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四次挥手"><span class="nav-number">2.2.</span> <span class="nav-text">四次挥手</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP"><span class="nav-number">3.</span> <span class="nav-text">HTTP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP请求方法"><span class="nav-number">3.1.</span> <span class="nav-text">HTTP请求方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP响应状态码："><span class="nav-number">3.2.</span> <span class="nav-text">HTTP响应状态码：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP消息报头"><span class="nav-number">3.3.</span> <span class="nav-text">HTTP消息报头</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#通用报头"><span class="nav-number">3.3.1.</span> <span class="nav-text">通用报头</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#请求报头"><span class="nav-number">3.3.2.</span> <span class="nav-text">请求报头</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#响应报头"><span class="nav-number">3.3.3.</span> <span class="nav-text">响应报头</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#实体报头"><span class="nav-number">3.3.4.</span> <span class="nav-text">实体报头</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
