@@ -86,16 +86,17 @@
 
 
 
-<meta name="description" content="科班出身的野生程序猿">
-<meta property="og:type" content="website">
-<meta property="og:title" content="卖欠账包的王大麻">
-<meta property="og:url" content="http://gemus.site/archives/2018/index.html">
+<meta name="description" content="常见的Map实现类   Map类 特性     HashTable Map基于散列表的实现，HashTable继承自抽象类Dictionary（Dictionary是一个被废弃的接口），是线程安全的。   HashMap Map基于散列表的实现（取代了HashTable）。继承自抽象类AbstractMap，插入和查询“键对值”的开销是固定的。   LinkedHashMap 类似于HashMap">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Map的方方面面">
+<meta property="og:url" content="http://gemus.site/2018/02/13/MapRealize/index.html">
 <meta property="og:site_name" content="卖欠账包的王大麻">
-<meta property="og:description" content="科班出身的野生程序猿">
+<meta property="og:description" content="常见的Map实现类   Map类 特性     HashTable Map基于散列表的实现，HashTable继承自抽象类Dictionary（Dictionary是一个被废弃的接口），是线程安全的。   HashMap Map基于散列表的实现（取代了HashTable）。继承自抽象类AbstractMap，插入和查询“键对值”的开销是固定的。   LinkedHashMap 类似于HashMap">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-02-13T07:04:29.353Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="卖欠账包的王大麻">
-<meta name="twitter:description" content="科班出身的野生程序猿">
+<meta name="twitter:title" content="Map的方方面面">
+<meta name="twitter:description" content="常见的Map实现类   Map类 特性     HashTable Map基于散列表的实现，HashTable继承自抽象类Dictionary（Dictionary是一个被废弃的接口），是线程安全的。   HashMap Map基于散列表的实现（取代了HashTable）。继承自抽象类AbstractMap，插入和查询“键对值”的开销是固定的。   LinkedHashMap 类似于HashMap">
 
 
 
@@ -125,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://gemus.site/archives/2018/"/>
+  <link rel="canonical" href="http://gemus.site/2018/02/13/MapRealize/"/>
 
 
 
 
 
-  <title>归档 | 卖欠账包的王大麻</title>
+  <title>Map的方方面面 | 卖欠账包的王大麻</title>
   
 
 
@@ -150,7 +151,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     <a href="https://github.com/JoshuaRogue"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
 
@@ -289,410 +290,264 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://gemus.site/2018/02/13/MapRealize/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wong Zhenyu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="卖欠账包的王大麻">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
-         
+          <h1 class="post-title" itemprop="name headline">Map的方方面面</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-13T13:44:32+08:00">
+                2018-02-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        很好! 目前共计 87 篇日志。 继续努力。
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
 
-        
+          
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/02/13/MapRealize/" itemprop="url">
+          
+
+          
+            <div class="post-wordcount">
               
-                <span itemprop="name">Map的方方面面</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  656 字
+                </span>
               
-            </a>
-        
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-02-13T13:44:32+08:00"
-              content="2018-02-13" >
-          02-13
-        </time>
-      </div>
+              
+                <span class="post-meta-divider">|</span>
+              
 
-    </header>
-  </article>
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2 分钟
+                </span>
+              
+            </div>
+          
 
+          
 
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/02/12/threadMethod/" itemprop="url">
-              
-                <span itemprop="name">Java中Thread类的方法(一)</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-02-12T21:46:50+08:00"
-              content="2018-02-12" >
-          02-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/02/11/synchronized-and-volatile/" itemprop="url">
-              
-                <span itemprop="name">synchronized与volatile</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-02-11T21:35:01+08:00"
-              content="2018-02-11" >
-          02-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <h4 id="常见的Map实现类"><a href="#常见的Map实现类" class="headerlink" title="常见的Map实现类"></a>常见的Map实现类</h4><table>
+<thead>
+<tr>
+<th>Map类</th>
+<th>特性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HashTable</td>
+<td>Map基于散列表的实现，HashTable继承自抽象类Dictionary（Dictionary是一个被废弃的接口），是线程安全的。</td>
+</tr>
+<tr>
+<td>HashMap</td>
+<td>Map基于散列表的实现（取代了HashTable）。继承自抽象类AbstractMap，插入和查询“键对值”的开销是固定的。</td>
+</tr>
+<tr>
+<td>LinkedHashMap</td>
+<td>类似于HashMap，但是迭代遍历它时，取得“键对值”的顺序时其插入顺序，或者是LRU（最近最少使用）的次序，使用链表维护内部次序，所以迭代访问更快。</td>
+</tr>
+<tr>
+<td>TreeMap</td>
+<td>基于红黑树（自平衡二叉查找树）的实现，查看“键”或者“键对值”时，它们会被排序。特点是得到的结果是经过排序的，TreeMap也是唯一的带有SubMap（）方法的Map，可以返回一个子树。</td>
+</tr>
+<tr>
+<td>WeakHashMap</td>
+<td>弱键映射，允许释放映射所指向的对象，如果除映射之外没有引用指向某个“键”，那么此“键”可以被垃圾收集器回收。</td>
+</tr>
+<tr>
+<td>ConcurrentHashMap</td>
+<td>一种线程安全的Map，它不涉及同步加锁。</td>
+</tr>
+<tr>
+<td>IdentityHashMap</td>
+<td>使用==代替equals（）对“键”进行比较的散列映射。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="HashMap与HashTable的比较"><a href="#HashMap与HashTable的比较" class="headerlink" title="HashMap与HashTable的比较"></a>HashMap与HashTable的比较</h4><p>HashMap与HashTable推出的时间是不同的，HashTable是jdk1.1就被推出的类，现在已经被遗弃，而HashMap则是用来替换它的类，具体比较如下</p>
+<table>
+<thead>
+<tr>
+<th>比较点</th>
+<th>HashMap</th>
+<th>HashTable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>性能</td>
+<td>采用异步处理方式，性能更高</td>
+<td>采用同步处理方式，性能较低</td>
+</tr>
+<tr>
+<td>线程安全</td>
+<td>非线程安全</td>
+<td>线程安全</td>
+</tr>
+<tr>
+<td>空键</td>
+<td>允许将key设置为null</td>
+<td>不允许将key设置为null，否则将报空指针异常</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>HashTable是使用synchronized关键字来实现线程互斥来达到线程同步的目的的</p>
+</blockquote>
+<h4 id="HashMap的实现"><a href="#HashMap的实现" class="headerlink" title="HashMap的实现"></a>HashMap的实现</h4><p>HashMap内部维护着一个散列表，当我们使用put函数的时候，会调用Hash方法对Key做Hash（即通过hashCode()的高16位异或低16位）得到bucket位置，然后再进行储存，HashMap会根据当前bucket的占用情况自动调整容量。使用get函数获取对象时，与put方法一样，先对Key做hash，得到Bucket的位置，再通过equals()方法来确定键对值。<br>当发生Hash冲突时，在JDK8之前，会使用一个链表将同一Bucket的元素组织起来，使用get方法时再进行遍历；在JDK8中，将链表改为了TreeMap，提高了查询效率。</p>
+<h4 id="更高效的线程同步Map"><a href="#更高效的线程同步Map" class="headerlink" title="更高效的线程同步Map-"></a>更高效的线程同步Map-</h4><p>ConcurrentHashMap采用了分段锁的设计，只有在同一个分段内才存在竞态关系，不同的分段锁之间没有锁竞争。这个容器的实现是基于Java内存模型的。</p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/02/11/HashCode-And-equal/" itemprop="url">
-              
-                <span itemprop="name">hashCode()和equals()</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-02-11T20:45:28+08:00"
-              content="2018-02-11" >
-          02-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/02/10/sortStackByStack/" itemprop="url">
-              
-                <span itemprop="name">用一个栈来实现另一个栈的排序</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-02-10T15:48:13+08:00"
-              content="2018-02-10" >
-          02-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/02/09/reverseStack/" itemprop="url">
-              
-                <span itemprop="name">如何仅用递归函数逆序一个栈</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-02-09T09:23:28+08:00"
-              content="2018-02-09" >
-          02-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/02/08/networkframeworkAndTCP/" itemprop="url">
-              
-                <span itemprop="name">网络分层及TCP、HTTP协议</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-02-08T14:43:14+08:00"
-              content="2018-02-08" >
-          02-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/02/08/getMinStack/" itemprop="url">
-              
-                <span itemprop="name">设计一个有getMin功能的栈</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-02-08T10:20:38+08:00"
-              content="2018-02-08" >
-          02-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/02/07/getMax/" itemprop="url">
-              
-                <span itemprop="name">不用任何比较判断找出两个数中较大的数</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-02-07T15:20:12+08:00"
-              content="2018-02-07" >
-          02-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/02/06/Java中的网络通信/" itemprop="url">
-              
-                <span itemprop="name">Java中的网络通信</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-02-06T14:54:54+08:00"
-              content="2018-02-06" >
-          02-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+      
+      	<h3> 相关文章：</h3><ul class="related-posts"><li><a href="/2018/02/11/HashCode-And-equal/">hashCode()和equals()</a></li><li><a href="/2018/02/11/synchronized-and-volatile/">synchronized与volatile</a></li><li><a href="/2018/02/12/threadMethod/">Java中Thread类的方法(一)</a></li></ul>
+      
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/12/threadMethod/" rel="next" title="Java中Thread类的方法(一)">
+                <i class="fa fa-chevron-left"></i> Java中Thread类的方法(一)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2018/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2018/page/7/">7</a><a class="extend next" rel="next" href="/archives/2018/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
+  </article>
 
 
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -700,6 +555,15 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMzYxNS8xMDE3MA=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -720,8 +584,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -798,6 +671,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#常见的Map实现类"><span class="nav-number">1.</span> <span class="nav-text">常见的Map实现类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HashMap与HashTable的比较"><span class="nav-number">2.</span> <span class="nav-text">HashMap与HashTable的比较</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HashMap的实现"><span class="nav-number">3.</span> <span class="nav-text">HashMap的实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更高效的线程同步Map"><span class="nav-number">4.</span> <span class="nav-text">更高效的线程同步Map-</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -931,6 +820,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -959,6 +852,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
