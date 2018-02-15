@@ -86,17 +86,17 @@
 
 
 
-<meta name="description" content="汇总表如下所示     命令 作用 注意事项     git clone 把远程仓库取到本地 可能会需要输入GitHub的帐户名和密码，其中密码时不显示输入的   git log 查看历史记录 加上后缀-p查看详细历史，–stat查看简要统计，查看完按q键退出   git status 查看工作目录当前状态   git show 查看具体的 commit 查看当前的commit可以直接使用git">
+<meta name="description" content="汇总表如下所示     命令 作用 注意事项     git clone 把远程仓库取到本地 可能会需要输入GitHub的帐户名和密码，其中密码时不显示输入的   git log 查看历史记录 加上后缀-p查看详细历史，–stat查看简要统计，查看完按q键退出   git status 查看工作目录当前状态    git show 查看具体的 commit 查看当前的commit可以直接使用gi">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git基础命令汇总">
 <meta property="og:url" content="http://gemus.site/2018/02/14/GitCommand/index.html">
 <meta property="og:site_name" content="卖欠账包的王大麻">
-<meta property="og:description" content="汇总表如下所示     命令 作用 注意事项     git clone 把远程仓库取到本地 可能会需要输入GitHub的帐户名和密码，其中密码时不显示输入的   git log 查看历史记录 加上后缀-p查看详细历史，–stat查看简要统计，查看完按q键退出   git status 查看工作目录当前状态   git show 查看具体的 commit 查看当前的commit可以直接使用git">
+<meta property="og:description" content="汇总表如下所示     命令 作用 注意事项     git clone 把远程仓库取到本地 可能会需要输入GitHub的帐户名和密码，其中密码时不显示输入的   git log 查看历史记录 加上后缀-p查看详细历史，–stat查看简要统计，查看完按q键退出   git status 查看工作目录当前状态    git show 查看具体的 commit 查看当前的commit可以直接使用gi">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-14T13:03:46.572Z">
+<meta property="og:updated_time" content="2018-02-15T04:14:44.678Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git基础命令汇总">
-<meta name="twitter:description" content="汇总表如下所示     命令 作用 注意事项     git clone 把远程仓库取到本地 可能会需要输入GitHub的帐户名和密码，其中密码时不显示输入的   git log 查看历史记录 加上后缀-p查看详细历史，–stat查看简要统计，查看完按q键退出   git status 查看工作目录当前状态   git show 查看具体的 commit 查看当前的commit可以直接使用git">
+<meta name="twitter:description" content="汇总表如下所示     命令 作用 注意事项     git clone 把远程仓库取到本地 可能会需要输入GitHub的帐户名和密码，其中密码时不显示输入的   git log 查看历史记录 加上后缀-p查看详细历史，–stat查看简要统计，查看完按q键退出   git status 查看工作目录当前状态    git show 查看具体的 commit 查看当前的commit可以直接使用gi">
 
 
 
@@ -387,7 +387,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  474 字
+                  504 字
                 </span>
               
 
@@ -449,6 +449,7 @@
 <tr>
 <td>git status</td>
 <td>查看工作目录当前状态</td>
+<td></td>
 </tr>
 <tr>
 <td>git show</td>
@@ -468,16 +469,17 @@
 <tr>
 <td>git commit</td>
 <td>把文件提交到本地仓库</td>
-<td>一般还要通过<em>-m</em>参数提交描述信息，否则要进入编辑模式编辑提交信息</td>
+<td>一般还要通过<em>-m</em>参数提交描述信息，否则要进入编辑模式编辑提交信息,<em>commit –amend</em>可以修改已经提交到本地仓库的commit并生成新commit</td>
 </tr>
 <tr>
 <td>git push</td>
 <td>把当前 branch 的位置上传到远端仓库</td>
-<td>如果当前分支并不是默认分支，则使用<em>git push origin 分支名</em>提交到远程仓库</td>
+<td>如果当前分支并不是默认分支，则使用<em>git push origin 分支名</em>提交到远程仓库，使用<em>-f</em>可以忽略冲突，强制push</td>
 </tr>
 <tr>
 <td>git pull</td>
 <td>从远程仓库更新内容</td>
+<td></td>
 </tr>
 <tr>
 <td>git branch 分支名</td>
@@ -516,7 +518,7 @@
       
       
       
-      	<h3> 相关文章：</h3><ul class="related-posts"><li><a href="/2017/01/25/使用git bash下载Android源码/">使用git bash下载Android源码遇到的问题解决方法</a></li><li><a href="/2017/12/01/利用sm.ms写github项目主页/">利用sm.ms写github项目主页</a></li><li><a href="/2018/01/02/用Github桌面版实现最简单的hexo部署到Github/">用Github桌面版实现最简单的hexo部署到Github.io</a></li></ul>
+      	<h3> 相关文章：</h3><ul class="related-posts"><li><a href="/2018/02/15/gitpro/">Git高级命令</a></li><li><a href="/2017/01/25/使用git bash下载Android源码/">使用git bash下载Android源码遇到的问题解决方法</a></li><li><a href="/2017/12/01/利用sm.ms写github项目主页/">利用sm.ms写github项目主页</a></li><li><a href="/2018/01/02/用Github桌面版实现最简单的hexo部署到Github/">用Github桌面版实现最简单的hexo部署到Github.io</a></li></ul>
       
       
         <div class="post-nav">
@@ -531,6 +533,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/15/AysncTask/" rel="prev" title="AsyncTask解析">
+                AsyncTask解析 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -606,7 +612,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">91</span>
+                  <span class="site-state-item-count">94</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
