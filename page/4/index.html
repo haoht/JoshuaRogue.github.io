@@ -304,7 +304,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://gemus.site/2018/01/25/将单向链表按某值划分为左小中等右大的形式/">
+    <link itemprop="mainEntityOfPage" href="http://gemus.site/2018/01/25/轻量级的对象池-享元模式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wong Zhenyu">
@@ -323,7 +323,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/01/25/将单向链表按某值划分为左小中等右大的形式/" itemprop="url">将单向链表按某值划分成左边小、中间相等、右边大的形式</a></h1>
+                <a class="post-title-link" href="/2018/01/25/轻量级的对象池-享元模式/" itemprop="url">轻量级的对象池-享元模式</a></h1>
         
 
         <div class="post-meta">
@@ -358,8 +358,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/算法/" itemprop="url" rel="index">
-                    <span itemprop="name">算法</span>
+                  <a href="/categories/设计模式/" itemprop="url" rel="index">
+                    <span itemprop="name">设计模式</span>
                   </a>
                 </span>
 
@@ -389,7 +389,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  572 字
+                  320 字
                 </span>
               
 
@@ -405,7 +405,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3 分钟
+                  2 分钟
                 </span>
               
             </div>
@@ -429,16 +429,14 @@
         
           
           
-本题也有两种解法，一种普通解法一种进阶解法，进阶解法多出了额外空间复杂度的要求
+享元模式又称Flyweight，代表轻量级的意思，适用于可能存在大量可重复对象的场景
 
-普通解法普通解法的思路如下
-
-遍历链表，得到长度N
-生成长度为N的Node类型的数组nodeArr，遍历链表，依次
+这里举一个售卖火车票的例子
+共享对象的接口，这里是火车票接口123public interface Tick
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/01/25/将单向链表按某值划分为左小中等右大的形式/#more" rel="contents">
+            <a class="btn" href="/2018/01/25/轻量级的对象池-享元模式/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>

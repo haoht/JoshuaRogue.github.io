@@ -88,15 +88,15 @@
 
 <meta name="description" content="Android规定更新UI的操作只能在主线程进行，因为UI是在主线程创建的，所以只能在主线程更新，当然，我们也可以使用另一种说法，UI只能在它被创建的线程进行更新。  在这样的情况下，我们只能在子线程进行完耗时操作之后再由主线程进行更新，而Handler正是我们寻找的用于解决这个问题的关键。 组成Android的异步消息处理主要有四个部分组成，分别为：Message、Handler、Messag">
 <meta property="og:type" content="article">
-<meta property="og:title" content="handler与UI更新">
+<meta property="og:title" content="Handler与UI更新">
 <meta property="og:url" content="http://gemus.site/2018/02/15/handler/index.html">
 <meta property="og:site_name" content="卖欠账包的王大麻">
 <meta property="og:description" content="Android规定更新UI的操作只能在主线程进行，因为UI是在主线程创建的，所以只能在主线程更新，当然，我们也可以使用另一种说法，UI只能在它被创建的线程进行更新。  在这样的情况下，我们只能在子线程进行完耗时操作之后再由主线程进行更新，而Handler正是我们寻找的用于解决这个问题的关键。 组成Android的异步消息处理主要有四个部分组成，分别为：Message、Handler、Messag">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.loli.net/2018/02/15/5a852c421ceda.png">
-<meta property="og:updated_time" content="2018-02-15T06:44:54.677Z">
+<meta property="og:updated_time" content="2018-02-15T06:51:47.519Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="handler与UI更新">
+<meta name="twitter:title" content="Handler与UI更新">
 <meta name="twitter:description" content="Android规定更新UI的操作只能在主线程进行，因为UI是在主线程创建的，所以只能在主线程更新，当然，我们也可以使用另一种说法，UI只能在它被创建的线程进行更新。  在这样的情况下，我们只能在子线程进行完耗时操作之后再由主线程进行更新，而Handler正是我们寻找的用于解决这个问题的关键。 组成Android的异步消息处理主要有四个部分组成，分别为：Message、Handler、Messag">
 <meta name="twitter:image" content="https://i.loli.net/2018/02/15/5a852c421ceda.png">
 
@@ -134,7 +134,7 @@
 
 
 
-  <title>handler与UI更新 | 卖欠账包的王大麻</title>
+  <title>Handler与UI更新 | 卖欠账包的王大麻</title>
   
 
 
@@ -323,7 +323,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">handler与UI更新</h1>
+          <h1 class="post-title" itemprop="name headline">Handler与UI更新</h1>
         
 
         <div class="post-meta">
@@ -459,7 +459,7 @@
       
       
       
-      	<h3> 相关文章：</h3><ul class="related-posts"><li><a href="/2017/12/26/OpeningStartAnimation - Android开屏动画view/">OpeningStartAnimation - Android开屏动画view</a></li><li><a href="/2018/02/15/AysncTask/">AsyncTask解析</a></li><li><a href="/2017/10/05/DialogFragment实现DatePicker/">DialogFragment实现DatePicker</a></li><li><a href="/2017/10/08/ButterKnife在RecyclerView adapter中的使用/">ButterKnife在RecyclerView adapter中的使用</a></li><li><a href="/2017/10/13/DialogFragment实现自定义布局的小技巧/">DialogFragment实现自定义布局的小技巧</a></li><li><a href="/2017/10/07/NDK实现毛玻璃效果完全教程/">NDK实现毛玻璃效果完全教程</a></li><li><a href="/2017/10/19/Android中设置界面PreferenceFragment的用法/">Android中设置界面PreferenceFragment的用法</a></li><li><a href="/2017/10/18/android图片状态栏实现沉浸式状态栏/">android图片状态栏实现沉浸式状态栏</a></li><li><a href="/2017/11/27/Parcelable序列化类在Activity、Fragment之间通信/">Parcelable序列化类在Activity、Fragment之间通信</a></li><li><a href="/2017/11/15/使用GeForce Experience在Android studio上截图与录视频/">使用GeForce Experience在Android studio上截图与录视频</a></li></ul>
+      	<h3> 相关文章：</h3><ul class="related-posts"><li><a href="/2017/11/27/Parcelable序列化类在Activity、Fragment之间通信/">Parcelable序列化类在Activity、Fragment之间通信</a></li><li><a href="/2017/10/19/Android中设置界面PreferenceFragment的用法/">Android中设置界面PreferenceFragment的用法</a></li><li><a href="/2017/10/08/ButterKnife在RecyclerView adapter中的使用/">ButterKnife在RecyclerView adapter中的使用</a></li><li><a href="/2017/10/05/DialogFragment实现DatePicker/">DialogFragment实现DatePicker</a></li><li><a href="/2017/10/13/DialogFragment实现自定义布局的小技巧/">DialogFragment实现自定义布局的小技巧</a></li><li><a href="/2017/10/07/NDK实现毛玻璃效果完全教程/">NDK实现毛玻璃效果完全教程</a></li><li><a href="/2018/02/15/AysncTask/">AsyncTask解析</a></li><li><a href="/2017/12/26/OpeningStartAnimation - Android开屏动画view/">OpeningStartAnimation - Android开屏动画view</a></li><li><a href="/2017/10/18/android图片状态栏实现沉浸式状态栏/">android图片状态栏实现沉浸式状态栏</a></li><li><a href="/2017/11/15/使用GeForce Experience在Android studio上截图与录视频/">使用GeForce Experience在Android studio上截图与录视频</a></li></ul>
       
       
         <div class="post-nav">
